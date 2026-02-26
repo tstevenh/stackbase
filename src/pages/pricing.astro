@@ -7,11 +7,12 @@ const plans = [
     price: '$599',
     description: 'For first-time directory founders who need a strong MVP that can rank.',
     features: [
-      'Up to 800 listings',
       '6 key pages',
       'Core search experience',
       'Mobile-first responsive design',
       'Technical SEO baseline',
+      'CSV template + field mapping included',
+      'Import of your existing listing data (up to 200 rows)',
       'Analytics + Search Console setup',
       '1 revision round',
       'Async communication only (no calls)',
@@ -26,12 +27,13 @@ const plans = [
     price: '$999',
     description: 'Best fit for builders who want stronger UX, richer filters, and better SEO depth.',
     features: [
-      'Up to 3,000 listings',
       '10+ pages',
       'Advanced search + filters',
       'Conversion-focused UI system',
       'Full on-page SEO setup',
       'Schema + internal linking architecture',
+      'pSEO starter setup (up to 3 templates)',
+      'Import of your existing listing data (up to 1,000 rows)',
       '2 revision rounds',
       'Async communication only (no calls)',
       '7-day delivery'
@@ -45,12 +47,13 @@ const plans = [
     price: '$1599',
     description: 'For serious operators building a category-leading directory asset from day one.',
     features: [
-      'Up to 10,000 listings',
       'Unlimited page templates',
       'Advanced filtering + faceted UX',
       'Custom visual direction',
       'Complete SEO foundation + schema variants',
+      'pSEO expansion setup (up to 5 templates)',
       'Performance tuning + launch QA',
+      'Import of your existing listing data (up to 3,000 rows)',
       'Priority turnaround + support',
       '3 revision rounds',
       'Async communication only (no calls)',
@@ -64,16 +67,16 @@ const plans = [
 
 const addons = [
   {
-    name: 'Data Entry',
+    name: 'Basic Data Enrichment',
     price: '$0.50',
     unit: 'per listing',
-    description: 'I\'ll populate your directory with data you provide.'
+    description: 'Name, address, website, phone, and category normalization.'
   },
   {
-    name: 'Data Research',
+    name: 'Premium Data Enrichment',
     price: '$1.00',
     unit: 'per listing',
-    description: 'I\'ll research and compile listing data from scratch.'
+    description: 'Everything in basic + attributes, descriptions, and QA pass.'
   },
   {
     name: 'Custom Feature',
@@ -104,6 +107,7 @@ const addons = [
       <p class="text-xl text-[#8b8b9a] leading-relaxed max-w-2xl mx-auto">
         No hidden fees, no surprises. Choose a package that fits your needs. All plans include a custom-built directory delivered in 7 days.
       </p>
+      <p class="text-sm text-[#00f0ff]/90 mt-4 font-['JetBrains_Mono']">Data services are optional — if you already have listing data, I import and map it for you.</p>
     </div>
   </section>
 
@@ -194,14 +198,7 @@ const addons = [
             
             <tbody class="text-sm">
               <tr class="border-b border-[#2a2a3a]/50">
-                <td class="py-4 px-6 text-[#e2e2e8]">Listings</td>
-                <td class="text-center py-4 px-6 text-[#8b8b9a]">Up to 800</td>
-                <td class="text-center py-4 px-6 text-[#8b5cf6] font-medium">Up to 3,000</td>
-                <td class="text-center py-4 px-6 text-[#8b8b9a]">Up to 10,000</td>
-              </tr>
-              
-              <tr class="border-b border-[#2a2a3a]/50">
-                <td class="py-4 px-6 text-[#e2e2e8]">Static Pages</td>
+                <td class="py-4 px-6 text-[#e2e2e8]">Core Pages</td>
                 <td class="text-center py-4 px-6 text-[#8b8b9a]">6</td>
                 <td class="text-center py-4 px-6 text-[#8b5cf6] font-medium">10+</td>
                 <td class="text-center py-4 px-6 text-[#8b8b9a]">Unlimited</td>
@@ -209,14 +206,28 @@ const addons = [
               
               <tr class="border-b border-[#2a2a3a]/50">
                 <td class="py-4 px-6 text-[#e2e2e8]">Search & Filters</td>
-                <td class="text-center py-4 px-6 text-[#8b8b9a]">Basic</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Core</td>
                 <td class="text-center py-4 px-6 text-[#8b5cf6] font-medium">Advanced</td>
-                <td class="text-center py-4 px-6 text-[#8b8b9a]">Advanced</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Advanced + Faceted</td>
+              </tr>
+
+              <tr class="border-b border-[#2a2a3a]/50">
+                <td class="py-4 px-6 text-[#e2e2e8]">Data Import Included</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Up to 200 rows</td>
+                <td class="text-center py-4 px-6 text-[#8b5cf6] font-medium">Up to 1,000 rows</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Up to 3,000 rows</td>
               </tr>
               
               <tr class="border-b border-[#2a2a3a]/50">
+                <td class="py-4 px-6 text-[#e2e2e8]">pSEO Setup</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Not included</td>
+                <td class="text-center py-4 px-6 text-[#8b5cf6] font-medium">Up to 3 templates</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Up to 5 templates</td>
+              </tr>
+
+              <tr class="border-b border-[#2a2a3a]/50">
                 <td class="py-4 px-6 text-[#e2e2e8]">Schema Markup</td>
-                <td class="text-center py-4 px-6"><span class="text-[#5b5b6a]">—</span></td>
+                <td class="text-center py-4 px-6"><span class="text-[#5b5b6a]">Core</span></td>
                 <td class="text-center py-4 px-6"><svg class="w-5 h-5 text-[#8b5cf6] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                 <td class="text-center py-4 px-6"><svg class="w-5 h-5 text-[#00f0ff] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
               </tr>
