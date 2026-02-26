@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const steps = [
+  {
+    day: 'Day 1',
+    title: 'Discovery',
+    description: 'We hop on a call to discuss your niche, goals, and requirements. I ask questions to understand what success looks like for you.',
+    deliverables: ['Discovery call (30-60 min)', 'Project brief document', 'Timeline confirmation']
+  },
+  {
+    day: 'Day 2',
+    title: 'Data & Research',
+    description: 'I research your niche and start gathering the foundational data. This might mean scraping listings, researching competitors, or organizing existing data.',
+    deliverables: ['Competitor analysis', 'Keyword research', 'Data collection begins']
+  },
+  {
+    day: 'Day 3',
+    title: 'Design',
+    description: 'I create the visual design for your directory. Clean, modern, and focused on user experience. No endless revision cycles—just good design that works.',
+    deliverables: ['Homepage design', 'Listing page design', 'Mobile mockups']
+  },
+  {
+    day: 'Day 4-5',
+    title: 'Development',
+    description: 'I build your directory using Astro or Next.js. This includes all pages, search functionality, filters, and responsive design.',
+    deliverables: ['Static site generation', 'Search & filters', 'Responsive build']
+  },
+  {
+    day: 'Day 6',
+    title: 'Content & SEO',
+    description: 'I populate the site with content, set up SEO fundamentals (meta tags, sitemaps, schema), and configure analytics.',
+    deliverables: ['Content population', 'SEO setup', 'Analytics configuration']
+  },
+  {
+    day: 'Day 7',
+    title: 'Launch',
+    description: 'Final review, deployment, and handoff. Your directory goes live with a solid foundation for growth.',
+    deliverables: ['Final review', 'Domain & hosting setup', 'Live site + documentation']
+  }
+];
+
+const deliverables = [
+  'Custom design (no templates)',
+  'Static site (Astro or Next.js)',
+  'Responsive for all devices',
+  'Search functionality',
+  'Filter & sort features',
+  'SEO-optimized structure',
+  'XML sitemap generation',
+  'Schema markup',
+  'Google Analytics setup',
+  'Performance optimized (90+ scores)',
+  'Social sharing meta tags',
+  'Documentation & training'
+];
+---
+
+<Layout title="Process" description="From idea to live directory in 7 days. A simple, streamlined process.">
+  <!-- Header -->
+  <section class="pt-24 pb-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-semibold text-white mb-6">How it works</h1>
+      
+      <p class="text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+        A simple, streamlined process. From idea to live site in 7 days. No endless back-and-forth, no scope creep.
+      </p>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-16 border-t border-zinc-800/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="space-y-0">
+        {steps.map((step, index) => (
+          <div class="relative flex gap-6 md:gap-8">
+            <!-- Timeline line -->
+            {index !== steps.length - 1 && (
+              <div class="absolute left-4 top-10 bottom-0 w-px bg-zinc-800"></div>
+            )}
+            
+            <!-- Day marker -->
+            <div class="relative flex-shrink-0">
+              <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center">
+                <span class="text-xs font-medium text-zinc-400">{index + 1}</span>
+              </div>
+            </div>
+            
+            <!-- Content -->
+            <div class={`pb-12 ${index === steps.length - 1 ? '' : ''}`}>
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-zinc-800 text-zinc-400 text-xs font-medium">{step.day}</span>
+                <h3 class="text-xl font-semibold text-white">{step.title}</h3>
+              </div>
+              
+              <p class="text-zinc-400 mb-4">{step.description}</p>
+              
+              <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-4">
+                <p class="text-xs font-medium text-zinc-500 mb-2">DELIVERABLES</p>
+                <ul class="space-y-1">
+                  {step.deliverables.map(deliverable => (
+                    <li class="flex items-center gap-2 text-sm text-zinc-400">
+                      <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      {deliverable}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 border-t border-zinc-800/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-semibold text-white mb-4">What's included</h2>
+        <p class="text-zinc-400">Every directory I build comes with these features as standard.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        {deliverables.map(item => (
+          <div class="flex items-center gap-3 p-4 bg-zinc-900/50 border border-zinc-800 rounded-lg">
+            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-zinc-300">{item}</span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Teaser -->
+  <section class="py-16 border-t border-zinc-800/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-8 text-center">
+        <h3 class="text-xl font-semibold text-white mb-3">Have questions?</h3>
+        <p class="text-zinc-400 mb-6">Check out the FAQ for answers to common questions about the process, timelines, and what to expect.</p>
+        
+        <a href="/faq" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white border border-zinc-700 rounded-lg hover:bg-zinc-800 transition-colors">
+          Read FAQ
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold text-white mb-4">Ready to start?</h2>
+      <p class="text-zinc-400 mb-8">Let's build your directory. Choose a package and we'll get started.</p>
+      
+      <a href="/pricing" class="inline-flex items-center px-6 py-3 text-base font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
+        View Pricing
+      </a>
+    </div>
+  </section>
+</Layout>

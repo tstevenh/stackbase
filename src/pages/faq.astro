@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: 'What exactly do I get?',
+    answer: 'You get a complete, custom-built directory website. This includes: custom design (no templates), static site generation using Astro or Next.js, search and filter functionality, responsive design for all devices, SEO optimization (meta tags, sitemaps, schema markup), Google Analytics setup, and deployment. You also get documentation on how to update content.'
+  },
+  {
+    question: 'How long does it take?',
+    answer: 'Standard projects are delivered in 7 days from kickoff to launch. This assumes you provide the necessary information and data in a timely manner. If you need the data research add-on, it may add a few days depending on the scope.'
+  },
+  {
+    question: 'Do I need to provide the data?',
+    answer: 'Ideally, yes. You know your niche best. However, I offer data entry ($0.50/listing if you provide raw data) and data research ($1.00/listing if I need to find and compile the data myself) as add-ons.'
+  },
+  {
+    question: 'What tech stack do you use?',
+    answer: 'I primarily use Astro for static sites and Next.js for more complex applications. Both are modern, fast, and SEO-friendly frameworks. Styling is done with Tailwind CSS. The sites are deployed to Vercel or Netlify for optimal performance.'
+  },
+  {
+    question: 'Will my directory rank on Google?',
+    answer: 'I build every directory with SEO best practices: fast load times, proper URL structure, schema markup, sitemaps, and mobile optimization. However, SEO is a long-term game. I can\'t guarantee rankings, but I give your site the best possible foundation to succeed.'
+  },
+  {
+    question: 'Can I update the content myself?',
+    answer: 'Yes. For static sites, content is typically managed through markdown files or a headless CMS like Sanity or Strapi. I\'ll provide documentation and training on how to make updates. For larger projects, I can set up a proper admin dashboard.'
+  },
+  {
+    question: 'Do you offer hosting?',
+    answer: 'Hosting is not included in the project price. I recommend Vercel or Netlify for static sites (both have generous free tiers) or a VPS for more complex needs. I can help you set up hosting as part of the launch process.'
+  },
+  {
+    question: 'What about ongoing maintenance?',
+    answer: 'I offer a monthly maintenance package ($99/month) that includes content updates, security patches, technical support, and minor tweaks. This is optional—you\'re free to maintain the site yourself or hire someone else.'
+  },
+  {
+    question: 'How does payment work?',
+    answer: '50% upfront to book your spot, 50% on completion. I accept bank transfer or USDC. For projects over $1,000, I can do a 3-payment structure: 30% upfront, 40% at midpoint, 30% on completion.'
+  },
+  {
+    question: 'What if I need changes after launch?',
+    answer: 'Minor tweaks within 30 days of launch are included. Major changes or new features are billed separately. If you have the monthly maintenance package, small content updates are included.'
+  },
+  {
+    question: 'Do you work with any niche?',
+    answer: 'Almost any. I\'ve built directories for climbing gyms and golf simulators. I\'m open to other niches—local businesses, SaaS tools, creators, events, products, etc. If I don\'t think your niche is a good fit for a directory, I\'ll tell you honestly.'
+  },
+  {
+    question: 'Can you add user reviews or user submissions?',
+    answer: 'Yes, but this requires a database and moves the project from a static site to a dynamic application. This is typically an Enterprise-level feature and increases complexity and cost. Let\'s discuss your specific requirements.'
+  },
+  {
+    question: 'Do you offer refunds?',
+    answer: 'If I haven\'t started work yet, yes—full refund. Once work begins, the deposit is non-refundable but can be transferred to a future project. I\'m transparent about progress, so you\'ll always know where we stand.'
+  },
+  {
+    question: 'Why should I choose you over a cheaper alternative?',
+    answer: 'Fair question. I\'m not the cheapest option because I don\'t cut corners. I write clean, maintainable code. I optimize for performance and SEO from day one. I actually care about your project succeeding because my reputation depends on it. You\'re not just buying a website—you\'re buying expertise and a partner who wants your directory to rank.'
+  },
+  {
+    question: 'How do I get started?',
+    answer: 'Send me an email at hello@stackbase.directory with details about your niche and what you\'re looking to build. I\'ll review it and get back to you within 24 hours to schedule a discovery call.'
+  }
+];
+---
+
+<Layout title="FAQ" description="Answers to common questions about working with Stackbase.">
+  <!-- Header -->
+  <section class="pt-24 pb-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-semibold text-white mb-6">FAQ</h1>
+      
+      <p class="text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+        Answers to common questions about the process, pricing, and what to expect when working together.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ List -->
+  <section class="py-8">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="border border-zinc-800 rounded-xl overflow-hidden bg-zinc-900/30">
+            <button 
+              class="w-full flex items-center justify-between p-6 text-left hover:bg-zinc-800/50 transition-colors"
+              onclick={`document.getElementById('faq-${index}').classList.toggle('hidden')`}
+            >
+              <span class="text-white font-medium pr-4">{faq.question}</span>
+              <svg class="w-5 h-5 text-zinc-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id={`faq-${index}`} class="hidden px-6 pb-6">
+              <p class="text-zinc-400">{faq.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Still have questions -->
+  <section class="py-16 border-t border-zinc-800/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 md:p-12 text-center">
+        <h2 class="text-2xl md:text-3xl font-semibold text-white mb-4">Still have questions?</h2>
+        
+        <p class="text-zinc-400 mb-8 max-w-lg mx-auto">
+          I'm happy to answer any questions you have. Reach out and I'll get back to you within 24 hours.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="mailto:hello@stackbase.directory" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
+            Email Me
+          </a>
+          <a href="/pricing" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border border-zinc-700 rounded-lg hover:bg-zinc-800 transition-colors">
+            View Pricing
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
