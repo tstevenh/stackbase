@@ -18,75 +18,169 @@ const { title, description = "I build directories that rank. Premium directory w
   <title>{title} | Stackbase</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
-  <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/50">
+<body class="bg-[#0a0a0f] text-[#e2e2e8] antialiased overflow-x-hidden">
+  <!-- Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+  
+  <!-- Custom Cursor -->
+  <div class="custom-cursor hidden md:block" id="cursor" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-[#2a2a3a]/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex items-center justify-between h-16">
-        <a href="/" class="text-xl font-semibold text-white tracking-tight">Stackbase</a>
-        <div class="hidden md:flex items-center gap-8">
-          <a href="/portfolio" class="text-sm text-zinc-400 hover:text-white transition-colors">Portfolio</a>
-          <a href="/process" class="text-sm text-zinc-400 hover:text-white transition-colors">Process</a>
-          <a href="/pricing" class="text-sm text-zinc-400 hover:text-white transition-colors">Pricing</a>
-          <a href="/about" class="text-sm text-zinc-400 hover:text-white transition-colors">About</a>
-          <a href="/faq" class="text-sm text-zinc-400 hover:text-white transition-colors">FAQ</a>
+      <nav class="flex items-center justify-between h-16 md:h-20">
+        <a href="/" class="group flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00f0ff] to-[#8b5cf6] flex items-center justify-center transition-transform group-hover:scale-110">
+            <svg class="w-5 h-5 text-[#0a0a0f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-white tracking-tight font-['Space_Grotesk']">Stackbase</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/portfolio" class="px-4 py-2 text-sm text-[#8b8b9a] hover:text-white transition-colors relative group">
+            Portfolio
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#00f0ff] to-[#8b5cf6] group-hover:w-1/2 transition-all"></span>
+          </a>
+          <a href="/process" class="px-4 py-2 text-sm text-[#8b8b9a] hover:text-white transition-colors relative group">
+            Process
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#00f0ff] to-[#8b5cf6] group-hover:w-1/2 transition-all"></span>
+          </a>
+          <a href="/pricing" class="px-4 py-2 text-sm text-[#8b8b9a] hover:text-white transition-colors relative group">
+            Pricing
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#00f0ff] to-[#8b5cf6] group-hover:w-1/2 transition-all"></span>
+          </a>
+          <a href="/about" class="px-4 py-2 text-sm text-[#8b8b9a] hover:text-white transition-colors relative group">
+            About
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#00f0ff] to-[#8b5cf6] group-hover:w-1/2 transition-all"></span>
+          </a>
+          <a href="/faq" class="px-4 py-2 text-sm text-[#8b8b9a] hover:text-white transition-colors relative group">
+            FAQ
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#00f0ff] to-[#8b5cf6] group-hover:w-1/2 transition-all"></span>
+          </a>
         </div>
-        <a href="/pricing" class="hidden md:inline-flex items-center px-4 py-2 text-sm font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
+        
+        <a href="/pricing" class="hidden md:inline-flex items-center px-5 py-2.5 text-sm font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#00f0ff] to-[#00c8ff] rounded-lg hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all btn-cyber">
           Get Started
         </a>
-        <button class="md:hidden text-zinc-400" aria-label="Menu">
+        
+        <button class="md:hidden text-[#8b8b9a] hover:text-white transition-colors" aria-label="Menu" id="mobile-menu-btn">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
       </nav>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-[#2a2a3a]/50">
+        <div class="flex flex-col gap-2">
+          <a href="/portfolio" class="px-4 py-2 text-sm text-[#8b8b9a] hover:text-white transition-colors">Portfolio</a>
+          <a href="/process" class="px-4 py-2 text-sm text-[#8b8b9a] hover:text-white transition-colors">Process</a>
+          <a href="/pricing" class="px-4 py-2 text-sm text-[#8b8b9a] hover:text-white transition-colors">Pricing</a>
+          <a href="/about" class="px-4 py-2 text-sm text-[#8b8b9a] hover:text-white transition-colors">About</a>
+          <a href="/faq" class="px-4 py-2 text-sm text-[#8b8b9a] hover:text-white transition-colors">FAQ</a>
+          <a href="/pricing" class="mt-2 px-4 py-2 text-sm font-semibold text-[#0a0a0f] bg-[#00f0ff] rounded-lg text-center">Get Started</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="pt-16">
+  <main class="pt-16 md:pt-20">
     <slot />
   </main>
 
-  <footer class="border-t border-zinc-800/50 mt-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+  <footer class="border-t border-[#2a2a3a]/50 mt-24 bg-[#0a0a0f]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
         <div class="md:col-span-2">
-          <h3 class="text-lg font-semibold text-white mb-2">Stackbase</h3>
-          <p class="text-zinc-400 text-sm max-w-sm">Building directories that rank. Premium directory websites for niche communities with a focus on quality over quantity.</p>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00f0ff] to-[#8b5cf6] flex items-center justify-center">
+              <svg class="w-5 h-5 text-[#0a0a0f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+              </svg>
+            </div>
+            <span class="text-lg font-bold text-white font-['Space_Grotesk']">Stackbase</span>
+          </div>
+          <p class="text-[#8b8b9a] text-sm max-w-sm leading-relaxed">Building directories that rank. Premium directory websites for niche communities with a focus on quality over quantity.</p>
         </div>
         <div>
-          <h4 class="text-sm font-medium text-white mb-3">Pages</h4>
-          <ul class="space-y-2">
-            <li><a href="/portfolio" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">Portfolio</a></li>
-            <li><a href="/process" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">Process</a></li>
-            <li><a href="/pricing" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">Pricing</a></li>
-            <li><a href="/about" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">About</a></li>
+          <h4 class="text-sm font-semibold text-white mb-4 font-['Space_Grotesk']">Pages</h4>
+          <ul class="space-y-3">
+            <li><a href="/portfolio" class="text-sm text-[#8b8b9a] hover:text-[#00f0ff] transition-colors">Portfolio</a></li>
+            <li><a href="/process" class="text-sm text-[#8b8b9a] hover:text-[#00f0ff] transition-colors">Process</a></li>
+            <li><a href="/pricing" class="text-sm text-[#8b8b9a] hover:text-[#00f0ff] transition-colors">Pricing</a></li>
+            <li><a href="/about" class="text-sm text-[#8b8b9a] hover:text-[#00f0ff] transition-colors">About</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-sm font-medium text-white mb-3">Connect</h4>
-          <ul class="space-y-2">
-            <li><a href="mailto:hello@stackbase.directory" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">Email</a></li>
-            <li><a href="https://twitter.com" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">Twitter</a></li>
-            <li><a href="https://github.com" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">GitHub</a></li>
+          <h4 class="text-sm font-semibold text-white mb-4 font-['Space_Grotesk']">Connect</h4>
+          <ul class="space-y-3">
+            <li><a href="mailto:hello@stackbase.directory" class="text-sm text-[#8b8b9a] hover:text-[#00f0ff] transition-colors">Email</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener" class="text-sm text-[#8b8b9a] hover:text-[#00f0ff] transition-colors">Twitter</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener" class="text-sm text-[#8b8b9a] hover:text-[#00f0ff] transition-colors">GitHub</a></li>
           </ul>
         </div>
       </div>
-      <div class="mt-12 pt-8 border-t border-zinc-800/50 text-center">
-        <p class="text-xs text-zinc-600">© 2026 Stackbase. Built with Astro & Tailwind CSS.</p>
+      <div class="mt-12 pt-8 border-t border-[#2a2a3a]/50 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-[#5b5b6a]">© 2026 Stackbase. Built with Astro & Tailwind CSS.</p>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#00f0ff] pulse-live"></span>
+          <span class="text-xs text-[#5b5b6a] font-['JetBrains_Mono']">SYSTEM ONLINE</span>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Custom cursor (desktop only)
+    if (window.matchMedia('(pointer: fine)').matches) {
+      const cursor = document.getElementById('cursor');
+      let mouseX = 0, mouseY = 0;
+      let cursorX = 0, cursorY = 0;
+      
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      }, { passive: true });
+      
+      function animateCursor() {
+        const dx = mouseX - cursorX;
+        const dy = mouseY - cursorY;
+        cursorX += dx * 0.15;
+        cursorY += dy * 0.15;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+      
+      // Hover effect on interactive elements
+      const interactiveElements = document.querySelectorAll('a, button, .tilt-card');
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+      
+      document.addEventListener('mousedown', () => cursor.classList.add('clicking'));
+      document.addEventListener('mouseup', () => cursor.classList.remove('clicking'));
+    }
+  </script>
 </body>
 </html>
 
 <style is:global>
   html {
     scroll-behavior: smooth;
-  }
-  
-  ::selection {
-    background-color: rgba(255, 255, 255, 0.15);
   }
 </style>

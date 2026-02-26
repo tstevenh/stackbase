@@ -17,7 +17,8 @@ const plans = [
       '7-day delivery'
     ],
     cta: 'Get Started',
-    popular: false
+    popular: false,
+    color: '#00f0ff'
   },
   {
     name: 'Professional',
@@ -36,7 +37,8 @@ const plans = [
       '7-day delivery'
     ],
     cta: 'Most Popular',
-    popular: true
+    popular: true,
+    color: '#8b5cf6'
   },
   {
     name: 'Enterprise',
@@ -56,7 +58,8 @@ const plans = [
       '7-day delivery'
     ],
     cta: 'Get Started',
-    popular: false
+    popular: false,
+    color: '#ff006e'
   }
 ];
 
@@ -90,11 +93,16 @@ const addons = [
 
 <Layout title="Pricing" description="Transparent pricing for directory websites. No hidden fees, no surprises.">
   <!-- Header -->
-  <section class="pt-24 pb-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-semibold text-white mb-6">Simple, transparent pricing</h1>
+  <section class="relative pt-24 md:pt-32 pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-glow"></div>
+    
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-sm text-[#00f0ff] font-['JetBrains_Mono'] tracking-wider">PRICING</span>
       
-      <p class="text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 mb-6 font-['Space_Grotesk']">Simple, <span class="text-gradient">transparent</span> pricing</h1>
+      
+      
+      <p class="text-xl text-[#8b8b9a] leading-relaxed max-w-2xl mx-auto">
         No hidden fees, no surprises. Choose a package that fits your needs. All plans include a custom-built directory delivered in 7 days.
       </p>
     </div>
@@ -104,42 +112,56 @@ const addons = [
   <section class="py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid md:grid-cols-3 gap-6">
-        {plans.map(plan => (
-          <div class={`relative rounded-2xl border ${plan.popular ? 'border-emerald-500/50 bg-zinc-900/80' : 'border-zinc-800 bg-zinc-900'} p-8`}>
-            
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        {plans.map((plan, index) => (
+          <div 
+            class={`pricing-card relative rounded-2xl p-8 transition-all duration-500 ${
+              plan.popular 
+                ? 'bg-[#151520] border-2 border-[#8b5cf6] shadow-[0_0_40px_rgba(139,92,246,0.2)] scale-105 z-10' 
+                : 'bg-[#151520]/50 border border-[#2a2a3a] hover:border-[#2a2a3a]/80 hover:bg-[#151520]'
+            }`}
+            data-index={index}
+          >
             {plan.popular && (
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span class="px-3 py-1 rounded-full bg-emerald-500 text-zinc-950 text-xs font-medium">Most Popular</span>
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span class="px-4 py-1.5 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] text-[#0a0a0f] text-xs font-bold font-['JetBrains_Mono']">
+                  Most Popular
+                </span>
               </div>
             )}
             
-            <div class="mb-6">
-              <h3 class="text-lg font-semibold text-white">{plan.name}</h3>
-              <div class="flex items-baseline gap-1 mt-2">
-                <span class="text-4xl font-semibold text-white">{plan.price}</span>
-                <span class="text-zinc-500">/project</span>
+            <div class="mb-8">
+              <h3 class="text-lg font-semibold text-white font-['Space_Grotesk']">{plan.name}</h3>
+              
+              <div class="flex items-baseline gap-1 mt-3">
+                <span class="text-5xl font-bold text-white font-['JetBrains_Mono']">{plan.price}</span>
+                <span class="text-[#8b8b9a]">/project</span>
               </div>
-              <p class="text-zinc-400 text-sm mt-2">{plan.description}</p>
+              
+              <p class="text-[#8b8b9a] text-sm mt-3">{plan.description}</p>
             </div>
             
-            <ul class="space-y-3 mb-8">
+            <ul class="space-y-4 mb-8">
               {plan.features.map(feature => (
                 <li class="flex items-start gap-3">
-                  <svg class={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-emerald-500' : 'text-zinc-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  <span class="text-zinc-300 text-sm">{feature}</span>
+                  <div class={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5 ${
+                    plan.popular ? 'bg-[#8b5cf6]/20' : 'bg-[#00f0ff]/10'
+                  }`}>
+                    <svg class={`w-3 h-3 ${plan.popular ? 'text-[#8b5cf6]' : 'text-[#00f0ff]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <span class="text-[#e2e2e8] text-sm">{feature}</span>
                 </li>
               ))}
             </ul>
             
             <a 
-              href="mailto:hello@stackbase.directory?subject=Interested%20in%20the%20{plan.name}%20plan" 
-              class={`block text-center w-full py-3 px-4 rounded-lg font-medium transition-colors ${
+              href={`mailto:hello@stackbase.directory?subject=Interested%20in%20the%20${plan.name}%20plan`} 
+              class={`block text-center w-full py-4 px-6 rounded-xl font-semibold transition-all ${
                 plan.popular 
-                  ? 'bg-white text-zinc-950 hover:bg-zinc-200' 
-                  : 'bg-zinc-800 text-white hover:bg-zinc-700'
+                  ? 'bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] text-white hover:shadow-[0_0_30px_rgba(139,92,246,0.4)]' 
+                  : 'bg-[#0a0a0f] border border-[#2a2a3a] text-white hover:border-[#00f0ff] hover:shadow-[0_0_20px_rgba(0,240,255,0.1)] glow-border'
               }`}
             >
               {plan.cta}
@@ -147,84 +169,283 @@ const addons = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
 
+  <!-- Comparison Table -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk']">Compare <span class="text-gradient">plans</span></h2>
+        <p class="text-[#8b8b9a]">See exactly what you get with each package</p>
+      </div>
+
+      <div class="bg-[#151520] border border-[#2a2a3a] rounded-2xl overflow-hidden reveal">
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[600px]">
+            <thead>
+              <tr class="border-b border-[#2a2a3a]">
+                <th class="text-left py-4 px-6 text-[#8b8b9a] font-medium">Feature</th>
+                <th class="text-center py-4 px-6 text-white font-semibold">Starter</th>
+                <th class="text-center py-4 px-6 text-[#8b5cf6] font-semibold">Professional</th>
+                <th class="text-center py-4 px-6 text-white font-semibold">Enterprise</th>
+              </tr>
+            </thead>
+            
+            <tbody class="text-sm">
+              <tr class="border-b border-[#2a2a3a]/50">
+                <td class="py-4 px-6 text-[#e2e2e8]">Listings</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Up to 500</td>
+                <td class="text-center py-4 px-6 text-[#8b5cf6] font-medium">Up to 2,000</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Up to 10,000</td>
+              </tr>
+              
+              <tr class="border-b border-[#2a2a3a]/50">
+                <td class="py-4 px-6 text-[#e2e2e8]">Static Pages</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">5</td>
+                <td class="text-center py-4 px-6 text-[#8b5cf6] font-medium">10</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Unlimited</td>
+              </tr>
+              
+              <tr class="border-b border-[#2a2a3a]/50">
+                <td class="py-4 px-6 text-[#e2e2e8]">Search & Filters</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Basic</td>
+                <td class="text-center py-4 px-6 text-[#8b5cf6] font-medium">Advanced</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Advanced</td>
+              </tr>
+              
+              <tr class="border-b border-[#2a2a3a]/50">
+                <td class="py-4 px-6 text-[#e2e2e8]">Schema Markup</td>
+                <td class="text-center py-4 px-6"><span class="text-[#5b5b6a]">—</span></td>
+                <td class="text-center py-4 px-6"><svg class="w-5 h-5 text-[#8b5cf6] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
+                <td class="text-center py-4 px-6"><svg class="w-5 h-5 text-[#00f0ff] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
+              </tr>
+              
+              <tr class="border-b border-[#2a2a3a]/50">
+                <td class="py-4 px-6 text-[#e2e2e8]">Revision Rounds</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">1</td>
+                <td class="text-center py-4 px-6 text-[#8b5cf6] font-medium">2</td>
+                <td class="text-center py-4 px-6 text-[#8b8b9a]">Unlimited</td>
+              </tr>
+              
+              <tr>
+                <td class="py-4 px-6 text-[#e2e2e8]">Priority Support</td>
+                <td class="text-center py-4 px-6"><span class="text-[#5b5b6a]">—</span></td>
+                <td class="text-center py-4 px-6"><span class="text-[#5b5b6a]">—</span></td>
+                <td class="text-center py-4 px-6"><svg class="w-5 h-5 text-[#00f0ff] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Add-ons -->
-  <section class="py-16 border-t border-zinc-800/50">
+  <section class="py-16 border-t border-[#2a2a3a]/50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-10">
-        <h2 class="text-2xl font-semibold text-white mb-3">Optional add-ons</h2>
-        <p class="text-zinc-400">Customize your project with additional services.</p>
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk']">Optional <span class="text-gradient">add-ons</span></h2>
+        
+        <p class="text-[#8b8b9a]">Customize your project with additional services</p>
       </div>
 
-      <div class="space-y-4">
-        {addons.map(addon => (
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 bg-zinc-900 border border-zinc-800 rounded-xl">
-            <div>
-              <h3 class="text-white font-medium">{addon.name}</h3>
-              <p class="text-zinc-500 text-sm mt-1">{addon.description}</p>
-            </div>
-            <div class="text-left sm:text-right">
-              <div class="text-xl font-semibold text-white">{addon.price}</div>
-              <div class="text-xs text-zinc-500">{addon.unit}</div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {addons.map((addon, index) => (
+          <div 
+            class="addon-card group p-6 bg-[#151520]/50 border border-[#2a2a3a] rounded-xl hover:border-[#00f0ff]/30 hover:bg-[#151520] transition-all cursor-pointer reveal"
+            style={`transition-delay: ${index * 100}ms`}
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-white font-semibold mb-1 group-hover:text-[#00f0ff] transition-colors">{addon.name}</h3>
+                <p class="text-[#8b8b9a] text-sm">{addon.description}</p>
+              </div>
+              
+              <div class="text-right">
+                <div class="text-2xl font-bold text-white font-['JetBrains_Mono']">{addon.price}</div>
+                <div class="text-xs text-[#5b5b6a]">{addon.unit}</div>
+              </div>
             </div>
           </div>
         ))}
       </div>
-
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="py-16 border-t border-zinc-800/50">
+  <section class="py-16 border-t border-[#2a2a3a]/50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-10">
-        <h2 class="text-2xl font-semibold text-white mb-3">Common questions</h2>
-        <p class="text-zinc-400">Quick answers about pricing and payments.</p>
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk']">Common <span class="text-gradient">questions</span></h2>
+        
+        <p class="text-[#8b8b9a]">Quick answers about pricing and payments</p>
       </div>
 
       <div class="space-y-4">
-        <div class="border border-zinc-800 rounded-lg p-6">
-          <h3 class="text-white font-medium mb-2">What's included in the price?</h3>
-          <p class="text-zinc-400 text-sm">Everything you need to launch: custom design, development, SEO setup, analytics, and deployment. Hosting is separate—you'll need your own domain and hosting (I recommend Vercel or Netlify, which are free for static sites).</p>
+        <div class="faq-item bg-[#151520]/50 border border-[#2a2a3a] rounded-xl overflow-hidden reveal">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-[#151520] transition-colors">
+            <span class="text-white font-medium">What's included in the price?</span>
+            <svg class="faq-icon w-5 h-5 text-[#8b8b9a] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-[#8b8b9a] text-sm">Everything you need to launch: custom design, development, SEO setup, analytics, and deployment. Hosting is separate—you'll need your own domain and hosting (I recommend Vercel or Netlify, which are free for static sites).</p>
+          </div>
         </div>
 
-        <div class="border border-zinc-800 rounded-lg p-6">
-          <h3 class="text-white font-medium mb-2">How does payment work?</h3>
-          <p class="text-zinc-400 text-sm">50% upfront to start, 50% on completion. I accept bank transfer or crypto (USDC). For projects over $1,000, we can discuss a 3-payment structure.</p>
+        <div class="faq-item bg-[#151520]/50 border border-[#2a2a3a] rounded-xl overflow-hidden reveal">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-[#151520] transition-colors">
+            <span class="text-white font-medium">How does payment work?</span>
+            <svg class="faq-icon w-5 h-5 text-[#8b8b9a] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-[#8b8b9a] text-sm">50% upfront to start, 50% on completion. I accept bank transfer or crypto (USDC). For projects over $1,000, we can discuss a 3-payment structure.</p>
+          </div>
         </div>
 
-        <div class="border border-zinc-800 rounded-lg p-6">
-          <h3 class="text-white font-medium mb-2">What if I need changes after launch?</h3>
-          <p class="text-zinc-400 text-sm">Minor tweaks within 30 days of launch are included. Major changes or new features are billed at my standard rate. The monthly maintenance add-on covers ongoing content updates and technical support.</p>
+        <div class="faq-item bg-[#151520]/50 border border-[#2a2a3a] rounded-xl overflow-hidden reveal">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-[#151520] transition-colors">
+            <span class="text-white font-medium">What if I need changes after launch?</span>
+            <svg class="faq-icon w-5 h-5 text-[#8b8b9a] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-[#8b8b9a] text-sm">Minor tweaks within 30 days of launch are included. Major changes or new features are billed at my standard rate. The monthly maintenance add-on covers ongoing content updates and technical support.</p>
+          </div>
         </div>
 
-        <div class="border border-zinc-800 rounded-lg p-6">
-          <h3 class="text-white font-medium mb-2">Do you offer refunds?</h3>
-          <p class="text-zinc-400 text-sm">If I haven't started work yet, yes. Once work begins, the deposit is non-refundable but transferable to a future project. I'm transparent throughout the process, so there won't be surprises.</p>
+        <div class="faq-item bg-[#151520]/50 border border-[#2a2a3a] rounded-xl overflow-hidden reveal">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-[#151520] transition-colors">
+            <span class="text-white font-medium">Do you offer refunds?</span>
+            <svg class="faq-icon w-5 h-5 text-[#8b8b9a] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-[#8b8b9a] text-sm">If I haven't started work yet, yes. Once work begins, the deposit is non-refundable but transferable to a future project. I'm transparent throughout the process, so there won't be surprises.</p>
+          </div>
         </div>
       </div>
 
       <div class="text-center mt-8">
-        <a href="/faq" class="text-zinc-400 hover:text-white transition-colors text-sm">View all FAQ →</a>
+        <a href="/faq" class="text-[#8b8b9a] hover:text-[#00f0ff] transition-colors text-sm font-['JetBrains_Mono']">View all FAQ →</a>
       </div>
-
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-2xl md:text-3xl font-semibold text-white mb-4">Questions about your project?</h2>
-      <p class="text-zinc-400 mb-8">Every niche is different. Let's talk about what you need.</p>
+  <section class="relative py-24">
+    <div class="absolute inset-0">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#00f0ff]/10 to-[#8b5cf6]/10 rounded-full blur-[100px]"></div>
+    </div>
+    
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk']">Questions about your project?</h2>
+      <p class="text-[#8b8b9a] mb-8">Every niche is different. Let's talk about what you need.</p>
       
-      <a href="mailto:hello@stackbase.directory" class="inline-flex items-center px-6 py-3 text-base font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
+      <a href="mailto:hello@stackbase.directory" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#00f0ff] to-[#00c8ff] rounded-xl hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all btn-cyber glow-cyan">
         Get in Touch
       </a>
     </div>
   </section>
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => {
+      gsap.fromTo(el, 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+
+    // Pricing card hover effects
+    const pricingCards = document.querySelectorAll('.pricing-card');
+    pricingCards.forEach(card => {
+      if (!card.classList.contains('scale-105')) {
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, { y: -8, duration: 0.3, ease: 'power2.out' });
+        });
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, { y: 0, duration: 0.3, ease: 'power2.out' });
+        });
+      }
+    });
+
+    // Add-on card click effect
+    const addonCards = document.querySelectorAll('.addon-card');
+    addonCards.forEach(card => {
+      card.addEventListener('click', () => {
+        gsap.to(card, {
+          scale: 0.98,
+          duration: 0.1,
+          yoyo: true,
+          repeat: 1,
+          ease: 'power2.inOut'
+        });
+      });
+    });
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+      
+      trigger.addEventListener('click', () => {
+        const isOpen = !content.classList.contains('hidden');
+        
+        // Close all others
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.querySelector('.faq-content').classList.add('hidden');
+            otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current
+        if (isOpen) {
+          content.classList.add('hidden');
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+          
+          // Animate content
+          gsap.fromTo(content, 
+            { opacity: 0, y: -10 },
+            { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+          );
+        }
+      });
+    });
+  </script>
 </Layout>

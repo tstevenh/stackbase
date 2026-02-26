@@ -4,155 +4,197 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Portfolio" description="Two projects, real results. Quality over quantity.">
   <!-- Header -->
-  <section class="pt-24 pb-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-semibold text-white mb-6">Portfolio</h1>
-        <p class="text-xl text-zinc-400 leading-relaxed">
-          I don't have dozens of projects to show. What I have are two directories that I built from scratch, with real traffic and real results. I believe in quality over quantity.
+  <section class="relative pt-24 md:pt-32 pb-16 overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#00f0ff]/5 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl reveal">
+        <span class="text-sm text-[#00f0ff] font-['JetBrains_Mono'] tracking-wider">PORTFOLIO</span>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mt-4 mb-6 font-['Space_Grotesk']"><span class="text-gradient">Quality</span> over quantity</h1>
+        <p class="text-xl text-[#8b8b9a] leading-relaxed">
+          I don't have dozens of projects to show. What I have are two directories that I built from scratch, with real traffic and real results.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section class="py-12">
+  <section class="py-12 md:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="space-y-12">
+      <div class="space-y-16 md:space-y-24">
         
         <!-- Project 1: IndoorClimbingGym -->
-        <article class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
-          <div class="grid lg:grid-cols-2">
-            <div class="aspect-video lg:aspect-auto bg-zinc-850 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-zinc-800">
-              <div class="text-center p-8">
-                <div class="w-24 h-24 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                  <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                  </svg>
+        <article class="tilt-card group reveal">
+          <div class="bg-[#151520] border border-[#2a2a3a] rounded-3xl overflow-hidden glow-border hover:border-[#00f0ff]/30 transition-all duration-500">
+            <div class="grid lg:grid-cols-2">
+              <div class="aspect-video lg:aspect-auto bg-gradient-to-br from-[#1a1520] via-[#151020] to-[#0f0a15] flex items-center justify-center border-b lg:border-b-0 lg:border-r border-[#2a2a3a] relative overflow-hidden p-8">
+                <!-- Animated Grid Background -->
+                <div class="absolute inset-0 opacity-20">
+                  <div class="absolute inset-0" id="climbing-grid" style="background-image: linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px); background-size: 30px 30px;"></div>
                 </div>
-                <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="text-lg text-zinc-300 hover:text-white transition-colors">indoorclimbinggym.com</a>
-              </div>
-            </div>
-            
-            <div class="p-8 lg:p-10">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium">Live</span>
-                <span class="text-zinc-500 text-sm">Launched Nov 2025</span>
-              </div>
-              
-              <h2 class="text-2xl font-semibold text-white mb-3">IndoorClimbingGym.com</h2>
-              
-              <p class="text-zinc-400 mb-6">The most comprehensive directory of indoor climbing gyms worldwide. Features city pages, gym profiles, and equipment data across 50+ countries.</p>
-              
-              <div class="grid grid-cols-2 gap-4 mb-6">
-                <div class="bg-zinc-800/50 rounded-lg p-4">
-                  <div class="text-2xl font-semibold text-white">7.5K</div>
-                  <div class="text-xs text-zinc-500">Total URLs</div>
-                </div>
-                <div class="bg-zinc-800/50 rounded-lg p-4">
-                  <div class="text-2xl font-semibold text-white">1.78K</div>
-                  <div class="text-xs text-zinc-500">Indexed Pages</div>
-                </div>
-                <div class="bg-zinc-800/50 rounded-lg p-4">
-                  <div class="text-2xl font-semibold text-white">4.1K</div>
-                  <div class="text-xs text-zinc-500">Organic Keywords</div>
-                </div>
-                <div class="bg-zinc-800/50 rounded-lg p-4">
-                  <div class="text-2xl font-semibold text-white">~997</div>
-                  <div class="text-xs text-zinc-500">Organic Traffic</div>
+                
+                <div class="relative text-center z-10">
+                  <div class="relative inline-block">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-orange-500/30 to-red-600/30 rounded-3xl blur-xl pulse-live"></div>
+                    <div class="relative w-28 h-28 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center shadow-2xl">
+                      <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="text-lg text-[#00f0ff] hover:text-white transition-colors font-['JetBrains_Mono']">indoorclimbinggym.com</a>
                 </div>
               </div>
               
-              <div class="border-t border-zinc-800 pt-6">
-                <h4 class="text-sm font-medium text-white mb-3">Additional Stats</h4>
-                <div class="grid grid-cols-2 gap-y-2 text-sm">
-                  <div class="text-zinc-500">AI Cited Pages:</div>
-                  <div class="text-zinc-300">531</div>
-                  <div class="text-zinc-500">Backlinks:</div>
-                  <div class="text-zinc-300">126</div>
-                  <div class="text-zinc-500">Referring Domains:</div>
-                  <div class="text-zinc-300">40</div>
-                  <div class="text-zinc-500">Clicks (30d):</div>
-                  <div class="text-zinc-300">1.68K</div>
-                  <div class="text-zinc-500">Impressions (30d):</div>
-                  <div class="text-zinc-300">463K</div>
+              <div class="p-8 lg:p-12">
+                <div class="flex flex-wrap items-center gap-3 mb-6">
+                  <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/20 text-xs text-[#00f0ff] font-['JetBrains_Mono']">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#00f0ff] pulse-live"></span>
+                    LIVE
+                  </span>
+                  <span class="px-3 py-1.5 rounded-full bg-[#151520] border border-[#2a2a3a] text-xs text-[#8b8b9a]">Launched Nov 2025</span>
                 </div>
-              </div>
-              
-              <div class="flex gap-3 mt-6">
-                <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 text-sm font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
-                  Visit Site
-                  <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                  </svg>
-                </a>
-                <a href="/case-studies/indoorclimbinggym" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-zinc-700 rounded-lg hover:bg-zinc-800 transition-colors">
-                  Read Case Study
-                </a>
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk'] group-hover:text-[#00f0ff] transition-colors">IndoorClimbingGym.com</h2>
+                
+                <p class="text-[#8b8b9a] text-lg mb-8">The most comprehensive directory of indoor climbing gyms worldwide. Features city pages, gym profiles, and equipment data across 50+ countries.</p>
+                
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                  <div class="bg-[#0a0a0f] border border-[#2a2a3a] rounded-xl p-5 group-hover:border-[#00f0ff]/30 transition-colors">
+                    <div class="text-3xl font-bold text-white font-['JetBrains_Mono']">7.5K</div>
+                    <div class="text-xs text-[#5b5b6a] mt-1">Total URLs</div>
+                  </div>
+                  <div class="bg-[#0a0a0f] border border-[#2a2a3a] rounded-xl p-5 group-hover:border-[#00f0ff]/30 transition-colors">
+                    <div class="text-3xl font-bold text-[#00f0ff] font-['JetBrains_Mono']">1.78K</div>
+                    <div class="text-xs text-[#5b5b6a] mt-1">Indexed Pages</div>
+                  </div>
+                  <div class="bg-[#0a0a0f] border border-[#2a2a3a] rounded-xl p-5 group-hover:border-[#8b5cf6]/30 transition-colors">
+                    <div class="text-3xl font-bold text-[#8b5cf6] font-['JetBrains_Mono']">4.1K</div>
+                    <div class="text-xs text-[#5b5b6a] mt-1">Organic Keywords</div>
+                  </div>
+                  <div class="bg-[#0a0a0f] border border-[#2a2a3a] rounded-xl p-5 group-hover:border-[#ff006e]/30 transition-colors">
+                    <div class="text-3xl font-bold text-[#ff006e] font-['JetBrains_Mono']">~997</div>
+                    <div class="text-xs text-[#5b5b6a] mt-1">Organic Traffic</div>
+                  </div>
+                </div>
+                
+                <div class="border-t border-[#2a2a3a] pt-6 mb-8">
+                  <h4 class="text-sm font-semibold text-white mb-4 font-['Space_Grotesk']">Additional Stats</h4>
+                  
+                  <div class="grid grid-cols-2 gap-y-3 text-sm">
+                    <div class="flex justify-between">
+                      <span class="text-[#8b8b9a]">AI Cited Pages:</span>
+                      <span class="text-white font-['JetBrains_Mono']">531</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-[#8b8b9a]">Backlinks:</span>
+                      <span class="text-white font-['JetBrains_Mono']">126</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-[#8b8b9a]">Referring Domains:</span>
+                      <span class="text-white font-['JetBrains_Mono']">40</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-[#8b8b9a]">Clicks (30d):</span>
+                      <span class="text-white font-['JetBrains_Mono']">1.68K</span>
+                    </div>
+                    <div class="flex justify-between col-span-2">
+                      <span class="text-[#8b8b9a]">Impressions (30d):</span>
+                      <span class="text-white font-['JetBrains_Mono']">463K</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3">
+                  <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#00f0ff] to-[#00c8ff] rounded-xl hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all">
+                    Visit Site
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </a>
+                  <a href="/case-studies/indoorclimbinggym" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white border border-[#2a2a3a] rounded-xl hover:border-[#00f0ff] hover:shadow-[0_0_20px_rgba(0,240,255,0.1)] transition-all glow-border">
+                    Read Case Study
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </article>
 
         <!-- Project 2: GolfSimMap -->
-        <article class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
-          <div class="grid lg:grid-cols-2">
-            <div class="aspect-video lg:aspect-auto bg-zinc-850 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-zinc-800">
-              <div class="text-center p-8">
-                <div class="w-24 h-24 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
-                  <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
+        <article class="tilt-card group reveal">
+          <div class="bg-[#151520] border border-[#2a2a3a] rounded-3xl overflow-hidden glow-border hover:border-[#8b5cf6]/30 transition-all duration-500">
+            <div class="grid lg:grid-cols-2">
+              <div class="aspect-video lg:aspect-auto bg-gradient-to-br from-[#0f1a15] via-[#0a1510] to-[#05100a] flex items-center justify-center border-b lg:border-b-0 lg:border-r border-[#2a2a3a] relative overflow-hidden p-8">
+                <!-- Animated Grid Background -->
+                <div class="absolute inset-0 opacity-20">
+                  <div class="absolute inset-0" id="golf-grid" style="background-image: linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px); background-size: 30px 30px;"></div>
                 </div>
-                <a href="https://golfsimmap.com" target="_blank" rel="noopener" class="text-lg text-zinc-300 hover:text-white transition-colors">golfsimmap.com</a>
-              </div>
-            </div>
-            
-            <div class="p-8 lg:p-10">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium">Live</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-xs font-medium">New</span>
-                <span class="text-zinc-500 text-sm">Launched Feb 2026</span>
-              </div>
-              
-              <h2 class="text-2xl font-semibold text-white mb-3">GolfSimMap.com</h2>
-              
-              <p class="text-zinc-400 mb-6">Find golf simulators near you. A fresh take on the golf simulator directory space, focused on user experience and fast performance.</p>
-              
-              <div class="grid grid-cols-2 gap-4 mb-6">
-                <div class="bg-zinc-800/50 rounded-lg p-4">
-                  <div class="text-2xl font-semibold text-white">DR 13</div>
-                  <div class="text-xs text-zinc-500">Domain Rating</div>
-                </div>
-                <div class="bg-zinc-800/50 rounded-lg p-4">
-                  <div class="text-2xl font-semibold text-white">1 week</div>
-                  <div class="text-xs text-zinc-500">To reach DR 13</div>
-                </div>
-                <div class="bg-zinc-800/50 rounded-lg p-4">
-                  <div class="text-2xl font-semibold text-white">100%</div>
-                  <div class="text-xs text-zinc-500">Lighthouse</div>
-                </div>
-                <div class="bg-zinc-800/50 rounded-lg p-4">
-                  <div class="text-2xl font-semibold text-white"><1s</div>
-                  <div class="text-xs text-zinc-500">Load Time</div>
+                
+                <div class="relative text-center z-10">
+                  <div class="relative inline-block">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-green-500/30 to-emerald-600/30 rounded-3xl blur-xl pulse-live"></div>
+                    
+                    <div class="relative w-28 h-28 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-2xl">
+                      <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <a href="https://golfsimmap.com" target="_blank" rel="noopener" class="text-lg text-[#8b5cf6] hover:text-white transition-colors font-['JetBrains_Mono']">golfsimmap.com</a>
                 </div>
               </div>
               
-              <div class="border-t border-zinc-800 pt-6">
-                <h4 class="text-sm font-medium text-white mb-3">Tech Stack</h4>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-2.5 py-1 rounded-full bg-zinc-800 text-zinc-400 text-xs">Astro</span>
-                  <span class="px-2.5 py-1 rounded-full bg-zinc-800 text-zinc-400 text-xs">React</span>
-                  <span class="px-2.5 py-1 rounded-full bg-zinc-800 text-zinc-400 text-xs">Tailwind CSS</span>
-                  <span class="px-2.5 py-1 rounded-full bg-zinc-800 text-zinc-400 text-xs">TypeScript</span>
+              <div class="p-8 lg:p-12">
+                <div class="flex flex-wrap items-center gap-3 mb-6">
+                  <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 text-xs text-[#8b5cf6] font-['JetBrains_Mono']">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#8b5cf6] pulse-live"></span>
+                    LIVE
+                  </span>
+                  <span class="px-3 py-1.5 rounded-full bg-[#ff006e]/10 border border-[#ff006e]/20 text-xs text-[#ff006e] font-['JetBrains_Mono']">NEW</span>
+                  <span class="px-3 py-1.5 rounded-full bg-[#151520] border border-[#2a2a3a] text-xs text-[#8b8b9a]">Launched Feb 2026</span>
                 </div>
-              </div>
-              
-              <div class="flex gap-3 mt-6">
-                <a href="https://golfsimmap.com" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 text-sm font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk'] group-hover:text-[#8b5cf6] transition-colors">GolfSimMap.com</h2>
+                
+                <p class="text-[#8b8b9a] text-lg mb-8">Find golf simulators near you. A fresh take on the golf simulator directory space, focused on user experience and fast performance.</p>
+                
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                  <div class="bg-[#0a0a0f] border border-[#2a2a3a] rounded-xl p-5 group-hover:border-[#00f0ff]/30 transition-colors">
+                    <div class="text-3xl font-bold text-white font-['JetBrains_Mono']">DR 13</div>
+                    <div class="text-xs text-[#5b5b6a] mt-1">Domain Rating</div>
+                  </div>
+                  <div class="bg-[#0a0a0f] border border-[#2a2a3a] rounded-xl p-5 group-hover:border-[#8b5cf6]/30 transition-colors">
+                    <div class="text-3xl font-bold text-[#8b5cf6] font-['JetBrains_Mono']">1 week</div>
+                    <div class="text-xs text-[#5b5b6a] mt-1">To reach DR 13</div>
+                  </div>
+                  <div class="bg-[#0a0a0f] border border-[#2a2a3a] rounded-xl p-5 group-hover:border-[#00f0ff]/30 transition-colors">
+                    <div class="text-3xl font-bold text-[#00f0ff] font-['JetBrains_Mono']">100%</div>
+                    <div class="text-xs text-[#5b5b6a] mt-1">Lighthouse</div>
+                  </div>
+                  <div class="bg-[#0a0a0f] border border-[#2a2a3a] rounded-xl p-5 group-hover:border-[#ff006e]/30 transition-colors">
+                    <div class="text-3xl font-bold text-[#ff006e] font-['JetBrains_Mono']">&lt;1s</div>
+                    <div class="text-xs text-[#5b5b6a] mt-1">Load Time</div>
+                  </div>
+                </div>
+                
+                <div class="border-t border-[#2a2a3a] pt-6 mb-8">
+                  <h4 class="text-sm font-semibold text-white mb-4 font-['Space_Grotesk']">Tech Stack</h4>
+                  
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">Astro</span>
+                    <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">React</span>
+                    <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">Tailwind CSS</span>
+                    <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">TypeScript</span>
+                  </div>
+                </div>
+                
+                <a href="https://golfsimmap.com" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] rounded-xl hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all">
                   Visit Site
-                  <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                   </svg>
                 </a>
@@ -166,14 +208,91 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- CTA -->
-  <section class="py-16 border-t border-zinc-800/50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-2xl md:text-3xl font-semibold text-white mb-4">Want your own directory?</h2>
-      <p class="text-zinc-400 mb-8">Let's talk about your niche and what we can build together.</p>
+  <section class="relative py-24 border-t border-[#2a2a3a]/50">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#00f0ff]/5 to-transparent"></div>
+    
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-['Space_Grotesk']">Want your own <span class="text-gradient">directory</span>?</h2>
       
-      <a href="/pricing" class="inline-flex items-center px-6 py-3 text-base font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
+      <p class="text-[#8b8b9a] text-lg mb-10">Let's talk about your niche and what we can build together.</p>
+      
+      <a href="/pricing" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#00f0ff] to-[#00c8ff] rounded-xl hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all btn-cyber glow-cyan">
         View Pricing
       </a>
     </div>
   </section>
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => {
+      gsap.fromTo(el, 
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+
+    // 3D Tilt effect
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    
+    if (!isTouchDevice) {
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = (y - centerY) / 25;
+          const rotateY = (centerX - x) / 25;
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
+      });
+    }
+
+    // Animated grid backgrounds
+    let climbingGridOffset = 0;
+    let golfGridOffset = 0;
+    
+    function animateGrids() {
+      climbingGridOffset += 0.5;
+      golfGridOffset += 0.5;
+      
+      const climbingGrid = document.getElementById('climbing-grid');
+      const golfGrid = document.getElementById('golf-grid');
+      
+      if (climbingGrid) {
+        climbingGrid.style.backgroundPosition = `${climbingGridOffset}px ${climbingGridOffset}px`;
+      }
+      if (golfGrid) {
+        golfGrid.style.backgroundPosition = `${golfGridOffset}px ${golfGridOffset}px`;
+      }
+      
+      requestAnimationFrame(animateGrids);
+    }
+    
+    animateGrids();
+  </script>
 </Layout>

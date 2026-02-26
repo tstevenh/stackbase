@@ -3,133 +3,243 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Directory Websites That Rank">
-  <!-- Hero Section -->
-  <section class="relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 md:pt-32 md:pb-24">
-      <div class="text-center max-w-4xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-zinc-400 mb-8">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-          Available for new projects
+  <!-- Hero Section - Animated Directory Build -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0f]">
+    <!-- Animated Grid Background -->
+    <div class="absolute inset-0 grid-bg opacity-50" id="hero-grid"></div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-64 h-64 bg-[#00f0ff]/5 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#8b5cf6]/5 rounded-full blur-3xl animate-float-delayed"></div>
+    
+    <!-- Animated SVG Grid Lines -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <svg class="w-full h-full max-w-6xl max-h-[800px]" viewBox="0 0 800 600" fill="none" id="hero-svg">
+        <!-- Grid Lines -->
+        <line class="grid-line" x1="100" y1="100" x2="700" y2="100" stroke="url(#cyan-violet)" stroke-width="1" stroke-dasharray="600" stroke-dashoffset="600" />
+        <line class="grid-line" x1="100" y1="200" x2="700" y2="200" stroke="url(#cyan-violet)" stroke-width="1" stroke-dasharray="600" stroke-dashoffset="600" />
+        <line class="grid-line" x1="100" y1="300" x2="700" y2="300" stroke="url(#cyan-violet)" stroke-width="1" stroke-dasharray="600" stroke-dashoffset="600" />
+        <line class="grid-line" x1="100" y1="400" x2="700" y2="400" stroke="url(#cyan-violet)" stroke-width="1" stroke-dasharray="600" stroke-dashoffset="600" />
+        <line class="grid-line" x1="100" y1="500" x2="700" y2="500" stroke="url(#cyan-violet)" stroke-width="1" stroke-dasharray="600" stroke-dashoffset="600" />
+        
+        <line class="grid-line" x1="100" y1="100" x2="100" y2="500" stroke="url(#cyan-violet)" stroke-width="1" stroke-dasharray="400" stroke-dashoffset="400" />
+        <line class="grid-line" x1="250" y1="100" x2="250" y2="500" stroke="url(#cyan-violet)" stroke-width="1" stroke-dasharray="400" stroke-dashoffset="400" />
+        <line class="grid-line" x1="400" y1="100" x2="400" y2="500" stroke="url(#cyan-violet)" stroke-width="1" stroke-dasharray="400" stroke-dashoffset="400" />
+        <line class="grid-line" x1="550" y1="100" x2="550" y2="500" stroke="url(#cyan-violet)" stroke-width="1" stroke-dasharray="400" stroke-dashoffset="400" />
+        <line class="grid-line" x1="700" y1="100" x2="700" y2="500" stroke="url(#cyan-violet)" stroke-width="1" stroke-dasharray="400" stroke-dashoffset="400" />
+        
+        <!-- Data Points (animated circles) -->
+        <circle class="data-point" cx="175" cy="150" r="0" fill="#00f0ff" opacity="0.8" />
+        <circle class="data-point" cx="325" cy="250" r="0" fill="#8b5cf6" opacity="0.8" />
+        <circle class="data-point" cx="475" cy="350" r="0" fill="#ff006e" opacity="0.8" />
+        <circle class="data-point" cx="625" cy="200" r="0" fill="#00f0ff" opacity="0.8" />
+        <circle class="data-point" cx="175" cy="450" r="0" fill="#8b5cf6" opacity="0.8" />
+        <circle class="data-point" cx="625" cy="450" r="0" fill="#ff006e" opacity="0.8" />
+        
+        <!-- Connection Lines -->
+        <line class="connect-line" x1="175" y1="150" x2="325" y2="250" stroke="#00f0ff" stroke-width="1" opacity="0" />
+        <line class="connect-line" x1="325" y1="250" x2="475" y2="350" stroke="#8b5cf6" stroke-width="1" opacity="0" />
+        <line class="connect-line" x1="475" y1="350" x2="625" y2="200" stroke="#ff006e" stroke-width="1" opacity="0" />
+        <line class="connect-line" x1="175" y1="150" x2="175" y2="450" stroke="#00f0ff" stroke-width="1" opacity="0" />
+        <line class="connect-line" x1="625" y1="200" x2="625" y2="450" stroke="#ff006e" stroke-width="1" opacity="0" />
+        
+        <!-- Counter Boxes -->
+        <g class="counter-box" opacity="0">
+          <rect x="140" y="380" width="70" height="40" rx="4" fill="#151520" stroke="#2a2a3a" />
+          <text x="175" y="405" text-anchor="middle" fill="#00f0ff" font-family="JetBrains Mono" font-size="14" font-weight="600"><tspan class="counter" data-target="7500">0</tspan></text>
+        </g>
+        
+        <g class="counter-box" opacity="0">
+          <rect x="440" y="180" width="70" height="40" rx="4" fill="#151520" stroke="#2a2a3a" />
+          <text x="475" y="205" text-anchor="middle" fill="#8b5cf6" font-family="JetBrains Mono" font-size="14" font-weight="600"><tspan class="counter" data-target="4100">0</tspan></text>
+        </g>
+        
+        <g class="counter-box" opacity="0">
+          <rect x="590" y="480" width="70" height="40" rx="4" fill="#151520" stroke="#2a2a3a" />
+          <text x="625" y="505" text-anchor="middle" fill="#ff006e" font-family="JetBrains Mono" font-size="14" font-weight="600"><tspan class="counter" data-target="463">0</tspan>K</text>
+        </g>
+        
+        <defs>
+          <linearGradient id="cyan-violet" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3" />
+            <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#ff006e" stop-opacity="0.3" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#151520] border border-[#2a2a3a] mb-8 hero-badge opacity-0">
+        <span class="w-2 h-2 rounded-full bg-[#00f0ff] pulse-live"></span>
+        <span class="text-sm text-[#8b8b9a] font-['JetBrains_Mono']">AVAILABLE FOR PROJECTS</span>
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[1.1] mb-6 font-['Space_Grotesk']">
+        <span class="hero-title-line block overflow-hidden"><span class="inline-block">I build <span class="text-gradient">directories</span></span></span>
+        <span class="hero-title-line block overflow-hidden"><span class="inline-block">that <span class="text-gradient-cyan">rank</span></span></span>
+      </h1>
+      
+      <p class="text-lg md:text-xl text-[#8b8b9a] max-w-2xl mx-auto mb-10 leading-relaxed hero-subtitle opacity-0">
+        Premium directory websites for niche communities. Clean design, solid SEO, and fast performance out of the box. No templates, no shortcuts—just results.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center hero-cta opacity-0">
+        <a href="/portfolio" class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#00f0ff] to-[#00c8ff] rounded-xl hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all btn-cyber glow-border">
+          View Portfolio
+          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="/pricing" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border border-[#2a2a3a] rounded-xl hover:border-[#00f0ff] hover:shadow-[0_0_20px_rgba(0,240,255,0.1)] transition-all glow-border">
+          See Pricing
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 scroll-indicator">
+      <span class="text-xs text-[#5b5b6a] font-['JetBrains_Mono']">SCROLL</span>
+      <div class="w-px h-8 bg-gradient-to-b from-[#00f0ff] to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- Stats Section - Animated -->
+  <section class="relative border-y border-[#2a2a3a]/50 bg-[#0a0a0f] overflow-hidden">
+    <div class="absolute inset-0 bg-glow"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+        <div class="stat-item text-center group">
+          <div class="text-4xl md:text-5xl font-bold text-white mb-2 font-['JetBrains_Mono']"><span class="stat-counter" data-target="2">0</span></div>
+          <div class="text-sm text-[#8b8b9a] font-medium tracking-wide">LIVE PROJECTS</div>
+          <div class="w-12 h-0.5 bg-gradient-to-r from-[#00f0ff] to-transparent mx-auto mt-4 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         </div>
         
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight leading-tight mb-6">
-          I build directories
-          <br />
-          <span class="text-zinc-500">that rank</span>
-        </h1>
+        <div class="stat-item text-center group">
+          <div class="text-4xl md:text-5xl font-bold text-white mb-2 font-['JetBrains_Mono']"><span class="stat-counter" data-target="8">0</span>K+</div>
+          <div class="text-sm text-[#8b8b9a] font-medium tracking-wide">URLS INDEXED</div>
+          <div class="w-12 h-0.5 bg-gradient-to-r from-[#8b5cf6] to-transparent mx-auto mt-4 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </div>
         
-        <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Premium directory websites for niche communities. Clean design, solid SEO, and fast performance out of the box. No templates, no shortcuts—just results.
-        </p>
+        <div class="stat-item text-center group">
+          <div class="text-4xl md:text-5xl font-bold text-white mb-2 font-['JetBrains_Mono']"><span class="stat-counter" data-target="4.1">0</span>K+</div>
+          <div class="text-sm text-[#8b8b9a] font-medium tracking-wide">ORGANIC KEYWORDS</div>
+          <div class="w-12 h-0.5 bg-gradient-to-r from-[#ff006e] to-transparent mx-auto mt-4 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </div>
         
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/portfolio" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
-            View Portfolio
-          </a>
-          <a href="/pricing" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border border-zinc-700 rounded-lg hover:bg-zinc-900 transition-colors">
-            See Pricing
-          </a>
+        <div class="stat-item text-center group">
+          <div class="text-4xl md:text-5xl font-bold text-white mb-2 font-['JetBrains_Mono']"><span class="stat-counter" data-target="7">0</span></div>
+          <div class="text-sm text-[#8b8b9a] font-medium tracking-wide">DAY DELIVERY</div>
+          <div class="w-12 h-0.5 bg-gradient-to-r from-[#00f0ff] to-transparent mx-auto mt-4 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="border-y border-zinc-800/50 bg-zinc-900/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div>
-          <div class="text-3xl md:text-4xl font-semibold text-white">2</div>
-          <div class="text-sm text-zinc-500 mt-1">Live Projects</div>
-        </div>
-        <div>
-          <div class="text-3xl md:text-4xl font-semibold text-white">8K+</div>
-          <div class="text-sm text-zinc-500 mt-1">URLs Indexed</div>
-        </div>
-        <div>
-          <div class="text-3xl md:text-4xl font-semibold text-white">4K+</div>
-          <div class="text-sm text-zinc-500 mt-1">Organic Keywords</div>
-        </div>
-        <div>
-          <div class="text-3xl md:text-4xl font-semibold text-white">7</div>
-          <div class="text-sm text-zinc-500 mt-1">Day Delivery</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Preview -->
-  <section class="py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">Recent work</h2>
-        <p class="text-zinc-400 max-w-2xl mx-auto">Two projects, real results. I don't have a massive portfolio because I focus on quality over quantity.</p>
+  <!-- Portfolio Preview - 3D Cards -->
+  <section class="relative py-24 md:py-32 bg-[#0a0a0f] overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-[#00f0ff]/3 rounded-full blur-[150px]"></div>
+    <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#8b5cf6]/3 rounded-full blur-[150px]"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="text-sm text-[#00f0ff] font-['JetBrains_Mono'] tracking-wider">RECENT WORK</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 mb-6 font-['Space_Grotesk']">Built to <span class="text-gradient">perform</span></h2>
+        <p class="text-[#8b8b9a] max-w-2xl mx-auto">Two projects, real results. I don't have a massive portfolio because I focus on quality over quantity.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Project 1 -->
-        <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="group block">
-          <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-zinc-700 transition-colors">
-            <div class="aspect-video bg-zinc-850 flex items-center justify-center border-b border-zinc-800">
-              <div class="text-center">
-                <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Project 1 - IndoorClimbingGym -->
+        <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="tilt-card group block reveal">
+          <div class="relative bg-[#151520] border border-[#2a2a3a] rounded-2xl overflow-hidden glow-border transition-all duration-300 hover:border-[#00f0ff]/30">
+            <div class="absolute top-4 left-4 z-10 flex items-center gap-2">
+              <span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/20 text-xs text-[#00f0ff] font-['JetBrains_Mono']">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#00f0ff] pulse-live"></span>
+                LIVE
+              </span>
+            </div>
+            
+            <div class="aspect-video bg-gradient-to-br from-[#1a1a2e] to-[#0f0f1a] flex items-center justify-center border-b border-[#2a2a3a] relative overflow-hidden">
+              <div class="absolute inset-0 opacity-20">
+                <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, #00f0ff 1px, transparent 0); background-size: 40px 40px;"></div>
+              </div>
+              <div class="relative text-center">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center shadow-2xl">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                   </svg>
                 </div>
-                <span class="text-zinc-400 text-sm">indoorclimbinggym.com</span>
+                <span class="text-[#8b8b9a] text-sm font-['JetBrains_Mono']">indoorclimbinggym.com</span>
               </div>
             </div>
+            
             <div class="p-6">
-              <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">IndoorClimbingGym.com</h3>
-              <p class="text-zinc-400 text-sm mb-4">The largest directory of indoor climbing gyms worldwide. Launched November 2025.</p>
-              <div class="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div class="text-lg font-semibold text-white">7.5K</div>
-                  <div class="text-xs text-zinc-500">URLs</div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#00f0ff] transition-colors font-['Space_Grotesk']">IndoorClimbingGym.com</h3>
+              <p class="text-[#8b8b9a] text-sm mb-6">The largest directory of indoor climbing gyms worldwide. Launched November 2025.</p>
+              
+              <div class="grid grid-cols-3 gap-4">
+                <div class="text-center p-3 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a]">
+                  <div class="text-lg font-bold text-white font-['JetBrains_Mono']">7.5K</div>
+                  <div class="text-xs text-[#5b5b6a]">URLs</div>
                 </div>
-                <div>
-                  <div class="text-lg font-semibold text-white">4.1K</div>
-                  <div class="text-xs text-zinc-500">Keywords</div>
+                <div class="text-center p-3 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a]">
+                  <div class="text-lg font-bold text-[#00f0ff] font-['JetBrains_Mono']">4.1K</div>
+                  <div class="text-xs text-[#5b5b6a]">Keywords</div>
                 </div>
-                <div>
-                  <div class="text-lg font-semibold text-white">463K</div>
-                  <div class="text-xs text-zinc-500">Impressions</div>
+                <div class="text-center p-3 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a]">
+                  <div class="text-lg font-bold text-[#8b5cf6] font-['JetBrains_Mono']">463K</div>
+                  <div class="text-xs text-[#5b5b6a]">Impressions</div>
                 </div>
               </div>
             </div>
           </div>
         </a>
 
-        <!-- Project 2 -->
-        <a href="https://golfsimmap.com" target="_blank" rel="noopener" class="group block">
-          <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-zinc-700 transition-colors">
-            <div class="aspect-video bg-zinc-850 flex items-center justify-center border-b border-zinc-800">
-              <div class="text-center">
-                <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <!-- Project 2 - GolfSimMap -->
+        <a href="https://golfsimmap.com" target="_blank" rel="noopener" class="tilt-card group block reveal">
+          <div class="relative bg-[#151520] border border-[#2a2a3a] rounded-2xl overflow-hidden glow-border transition-all duration-300 hover:border-[#8b5cf6]/30">
+            <div class="absolute top-4 left-4 z-10 flex items-center gap-2">
+              <span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 text-xs text-[#8b5cf6] font-['JetBrains_Mono']">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#8b5cf6] pulse-live"></span>
+                LIVE
+              </span>
+              <span class="px-3 py-1 rounded-full bg-[#ff006e]/10 border border-[#ff006e]/20 text-xs text-[#ff006e] font-['JetBrains_Mono']">NEW</span>
+            </div>
+            
+            <div class="aspect-video bg-gradient-to-br from-[#0f1a0f] to-[#0a140a] flex items-center justify-center border-b border-[#2a2a3a] relative overflow-hidden">
+              <div class="absolute inset-0 opacity-20">
+                <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, #8b5cf6 1px, transparent 0); background-size: 40px 40px;"></div>
+              </div>
+              
+              <div class="relative text-center">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-2xl">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                   </svg>
                 </div>
-                <span class="text-zinc-400 text-sm">golfsimmap.com</span>
+                <span class="text-[#8b8b9a] text-sm font-['JetBrains_Mono']">golfsimmap.com</span>
               </div>
             </div>
+            
             <div class="p-6">
-              <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-zinc-300 transition-colors">GolfSimMap.com</h3>
-              <p class="text-zinc-400 text-sm mb-4">Find golf simulators near you. Recently launched February 2026.</p>
-              <div class="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div class="text-lg font-semibold text-white">DR 13</div>
-                  <div class="text-xs text-zinc-500">Authority</div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#8b5cf6] transition-colors font-['Space_Grotesk']">GolfSimMap.com</h3>
+              <p class="text-[#8b8b9a] text-sm mb-6">Find golf simulators near you. Recently launched February 2026.</p>
+              
+              <div class="grid grid-cols-3 gap-4">
+                <div class="text-center p-3 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a]">
+                  <div class="text-lg font-bold text-white font-['JetBrains_Mono']">DR 13</div>
+                  <div class="text-xs text-[#5b5b6a]">Authority</div>
                 </div>
-                <div>
-                  <div class="text-lg font-semibold text-white">1 wk</div>
-                  <div class="text-xs text-zinc-500">To DR 13</div>
+                <div class="text-center p-3 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a]">
+                  <div class="text-lg font-bold text-[#00f0ff] font-['JetBrains_Mono']">1 wk</div>
+                  <div class="text-xs text-[#5b5b6a]">To DR 13</div>
                 </div>
-                <div>
-                  <div class="text-lg font-semibold text-white">New</div>
-                  <div class="text-xs text-zinc-500">Launch</div>
+                <div class="text-center p-3 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a]">
+                  <div class="text-lg font-bold text-[#8b5cf6] font-['JetBrains_Mono']">100%</div>
+                  <div class="text-xs text-[#5b5b6a]">Lighthouse</div>
                 </div>
               </div>
             </div>
@@ -137,113 +247,292 @@ import Layout from '../layouts/Layout.astro';
         </a>
       </div>
 
-      <div class="text-center mt-10">
-        <a href="/portfolio" class="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors">
-          View full portfolio
-          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      <div class="text-center mt-12 reveal">
+        <a href="/portfolio" class="inline-flex items-center px-6 py-3 text-[#00f0ff] border border-[#00f0ff]/30 rounded-xl hover:bg-[#00f0ff]/10 hover:border-[#00f0ff] transition-all font-['JetBrains_Mono'] text-sm">
+          View Full Portfolio
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Process Preview -->
-  <section class="py-24 border-t border-zinc-800/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Process Preview - Scroll Triggered -->
+  <section class="relative py-24 md:py-32 bg-[#0a0a0f] overflow-hidden">
+    <div class="absolute inset-0 bg-glow"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-semibold text-white mb-6">How it works</h2>
-          <p class="text-zinc-400 text-lg mb-8">A simple, streamlined process. From idea to live site in 7 days. No endless back-and-forth, no scope creep.</p>
+        <div class="reveal">
+          <span class="text-sm text-[#00f0ff] font-['JetBrains_Mono'] tracking-wider">HOW IT WORKS</span>
+          <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 mb-6 font-['Space_Grotesk']">Three steps to <span class="text-gradient">_launch</span></h2>
+          <p class="text-[#8b8b9a] text-lg mb-10">A simple, streamlined process. From idea to live site in 7 days. No endless back-and-forth, no scope creep.</p>
           
           <div class="space-y-6">
-            <div class="flex gap-4">
-              <div class="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center flex-shrink-0 text-sm font-medium text-zinc-300">1</div>
-              <div>
-                <h4 class="text-white font-medium">Discovery</h4>
-                <p class="text-zinc-500 text-sm">Tell me about your niche, goals, and requirements</p>
+            <div class="process-step flex gap-5 group">
+              <div class="flex flex-col items-center">
+                <div class="w-12 h-12 rounded-xl bg-[#151520] border border-[#2a2a3a] flex items-center justify-center text-lg font-bold text-[#00f0ff] font-['JetBrains_Mono'] group-hover:border-[#00f0ff] group-hover:shadow-[0_0_20px_rgba(0,240,255,0.2)] transition-all">01</div>
+                <div class="w-px flex-1 bg-[#2a2a3a] my-3"></div>
+              </div>
+              <div class="pb-8">
+                <h4 class="text-white font-semibold text-lg mb-2">Discovery</h4>
+                <p class="text-[#8b8b9a] text-sm">Tell me about your niche, goals, and requirements. We'll define the scope and set clear expectations.</p>
               </div>
             </div>
             
-            <div class="flex gap-4">
-              <div class="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center flex-shrink-0 text-sm font-medium text-zinc-300">2</div>
-              <div>
-                <h4 class="text-white font-medium">Design & Build</h4>
-                <p class="text-zinc-500 text-sm">I design and develop your directory with clean, modern code</p>
+            <div class="process-step flex gap-5 group">
+              <div class="flex flex-col items-center">
+                <div class="w-12 h-12 rounded-xl bg-[#151520] border border-[#2a2a3a] flex items-center justify-center text-lg font-bold text-[#8b5cf6] font-['JetBrains_Mono'] group-hover:border-[#8b5cf6] group-hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all">02</div>
+                <div class="w-px flex-1 bg-[#2a2a3a] my-3"></div>
+              </div>
+              <div class="pb-8">
+                <h4 class="text-white font-semibold text-lg mb-2">Design & Build</h4>
+                <p class="text-[#8b8b9a] text-sm">I design and develop your directory with clean, modern code. You'll see progress updates throughout.</p>
               </div>
             </div>
             
-            <div class="flex gap-4">
-              <div class="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center flex-shrink-0 text-sm font-medium text-zinc-300">3</div>
+            <div class="process-step flex gap-5 group">
+              <div class="flex flex-col items-center">
+                <div class="w-12 h-12 rounded-xl bg-[#151520] border border-[#2a2a3a] flex items-center justify-center text-lg font-bold text-[#ff006e] font-['JetBrains_Mono'] group-hover:border-[#ff006e] group-hover:shadow-[0_0_20px_rgba(255,0,110,0.2)] transition-all">03</div>
+              </div>
               <div>
-                <h4 class="text-white font-medium">Launch</h4>
-                <p class="text-zinc-500 text-sm">Site goes live with SEO foundation and analytics in place</p>
+                <h4 class="text-white font-semibold text-lg mb-2">Launch</h4>
+                <p class="text-[#8b8b9a] text-sm">Site goes live with SEO foundation and analytics in place. Time to start ranking.</p>
               </div>
             </div>
           </div>
           
-          <a href="/process" class="inline-flex items-center mt-8 text-sm text-white hover:text-zinc-300 transition-colors">
-            See full process
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          <a href="/process" class="inline-flex items-center mt-8 text-[#00f0ff] hover:text-white transition-colors group">
+            <span class="font-['JetBrains_Mono'] text-sm">See Full Process</span>
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
           </a>
         </div>
         
-        <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-8">
-          <h3 class="text-lg font-semibold text-white mb-4">What's included</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span class="text-zinc-400 text-sm">Custom design (no templates)</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span class="text-zinc-400 text-sm">Built with Astro or Next.js</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span class="text-zinc-400 text-sm">SEO-optimized structure</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span class="text-zinc-400 text-sm">Fast performance (99+ scores)</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span class="text-zinc-400 text-sm">Mobile-responsive design</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span class="text-zinc-400 text-sm">Google Analytics setup</span>
-            </li>
-          </ul>
+        <div class="reveal">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-[#00f0ff]/20 to-[#8b5cf6]/20 rounded-3xl blur-2xl"></div>
+            
+            <div class="relative bg-[#151520] border border-[#2a2a3a] rounded-2xl p-8">
+              <h3 class="text-xl font-bold text-white mb-6 font-['Space_Grotesk']">What's Included</h3>
+              
+              <ul class="space-y-4">
+                <li class="flex items-start gap-4">
+                  <div class="w-6 h-6 rounded-lg bg-[#00f0ff]/10 border border-[#00f0ff]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-[#00f0ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <span class="text-[#e2e2e8]">Custom design <span class="text-[#8b8b9a]">(no templates)</span></span>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-6 h-6 rounded-lg bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <span class="text-[#e2e2e8]">Built with <span class="text-[#8b8b9a]">Astro or Next.js</span></span>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-6 h-6 rounded-lg bg-[#ff006e]/10 border border-[#ff006e]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-[#ff006e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <span class="text-[#e2e2e8]">SEO-optimized <span class="text-[#8b8b9a]">structure</span></span>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-6 h-6 rounded-lg bg-[#00f0ff]/10 border border-[#00f0ff]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-[#00f0ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <span class="text-[#e2e2e8]">Fast performance <span class="text-[#8b8b9a]">(99+ scores)</span></span>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-6 h-6 rounded-lg bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <span class="text-[#e2e2e8]">Mobile-responsive <span class="text-[#8b8b9a]">design</span></span>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-6 h-6 rounded-lg bg-[#ff006e]/10 border border-[#ff006e]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-[#ff006e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <span class="text-[#e2e2e8]">Google Analytics <span class="text-[#8b8b9a]">setup</span></span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-semibold text-white mb-6">Ready to build your directory?</h2>
-      <p class="text-zinc-400 text-lg mb-10">Let's create something that ranks. No inflated promises, just solid work.</p>
+  <section class="relative py-24 md:py-32 bg-[#0a0a0f] overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#00f0ff]/5 to-transparent"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#00f0ff]/10 to-[#8b5cf6]/10 rounded-full blur-[100px]"></div>
+    </div>
+    
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 font-['Space_Grotesk']">Ready to build your <span class="text-gradient">directory</span>?</h2>
+      <p class="text-[#8b8b9a] text-lg md:text-xl mb-10 max-w-2xl mx-auto">Let's create something that ranks. No inflated promises, just solid work.</p>
       
-      <a href="/pricing" class="inline-flex items-center px-8 py-4 text-base font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
+      <a href="/pricing" class="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#00f0ff] to-[#00c8ff] rounded-xl hover:shadow-[0_0_40px_rgba(0,240,255,0.4)] transition-all btn-cyber glow-cyan">
         Get Started
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
       </a>
     </div>
   </section>
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Animations
+    const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    
+    // Animate grid lines
+    heroTimeline.to('.grid-line', {
+      strokeDashoffset: 0,
+      duration: 1.5,
+      stagger: 0.1,
+      ease: 'power2.inOut'
+    }, 0.5);
+    
+    // Animate data points
+    heroTimeline.to('.data-point', {
+      attr: { r: 6 },
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'back.out(2)'
+    }, 1.5);
+    
+    // Animate connection lines
+    heroTimeline.to('.connect-line', {
+      opacity: 0.6,
+      duration: 0.5,
+      stagger: 0.1
+    }, 2);
+    
+    // Animate counter boxes
+    heroTimeline.to('.counter-box', {
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.2
+    }, 2.5);
+    
+    // Animate counters
+    heroTimeline.add(() => {
+      document.querySelectorAll('.counter').forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        gsap.to(counter, {
+          textContent: target,
+          duration: 1.5,
+          ease: 'power2.out',
+          snap: { textContent: 1 },
+          onUpdate: function() {
+            if (target > 1000) {
+              counter.textContent = Math.round(this.targets()[0].textContent / 100) / 10 + 'K';
+            }
+          }
+        });
+      });
+    }, 2.8);
+
+    // Hero content
+    heroTimeline.to('.hero-badge', { opacity: 1, y: 0, duration: 0.6 }, 0.3);
+    heroTimeline.from('.hero-title-line span', {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15
+    }, 0.5);
+    heroTimeline.to('.hero-subtitle', { opacity: 1, y: 0, duration: 0.6 }, 1);
+    heroTimeline.to('.hero-cta', { opacity: 1, y: 0, duration: 0.6 }, 1.2);
+    heroTimeline.to('.scroll-indicator', { opacity: 1, duration: 0.6 }, 1.5);
+
+    // Stat counters on scroll
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('.stat-counter');
+          counters.forEach(counter => {
+            const target = parseFloat(counter.getAttribute('data-target'));
+            gsap.to(counter, {
+              textContent: target,
+              duration: 2,
+              ease: 'power2.out',
+              snap: { textContent: target < 10 ? 1 : 0.1 }
+            });
+          });
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-item').forEach(item => statObserver.observe(item));
+
+    // Reveal animations on scroll
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => {
+      gsap.fromTo(el, 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+
+    // 3D Tilt effect for cards
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+      });
+    });
+
+    // Parallax effect for floating elements
+    document.addEventListener('mousemove', (e) => {
+      const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+      const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+      
+      document.querySelectorAll('.animate-float, .animate-float-delayed').forEach((el, i) => {
+        const factor = (i + 1) * 0.5;
+        el.style.transform = `translate(${moveX * factor}px, ${moveY * factor}px)`;
+      });
+    }, { passive: true });
+  </script>
 </Layout>

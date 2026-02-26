@@ -4,30 +4,36 @@ import Layout from '../../layouts/Layout.astro';
 
 <Layout title="IndoorClimbingGym.com Case Study" description="Deep dive into how IndoorClimbingGym.com grew to 7.5K URLs and 463K impressions in 4 months.">
   <!-- Header -->
-  <section class="pt-24 pb-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center gap-2 text-sm text-zinc-500 mb-6">
-        <a href="/portfolio" class="hover:text-zinc-300 transition-colors">Portfolio</a>
+  <section class="relative pt-24 md:pt-32 pb-16 overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-500/5 to-transparent"></div>
+    
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-2 text-sm text-[#8b8b9a] mb-6 reveal">
+        <a href="/portfolio" class="hover:text-[#00f0ff] transition-colors">Portfolio</a>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
         </svg>
-        <span class="text-zinc-300">Case Study</span>
+        <span class="text-white">Case Study</span>
       </div>
 
-      <div class="flex items-center gap-3 mb-6">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
+      <div class="flex items-center gap-5 mb-6 reveal">
+        <div class="relative">
+          <div class="absolute -inset-2 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl blur-lg opacity-50"></div>
+          <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
         </div>
+        
         <div>
-          <h1 class="text-3xl md:text-4xl font-semibold text-white">IndoorClimbingGym.com</h1>
-          <p class="text-zinc-500">The largest directory of indoor climbing gyms worldwide</p>
+          <h1 class="text-4xl md:text-5xl font-bold text-white font-['Space_Grotesk']">IndoorClimbingGym.com</h1>
+          <p class="text-[#8b8b9a]">The largest directory of indoor climbing gyms worldwide</p>
         </div>
       </div>
 
-      <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors">
-        Visit live site
+      <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="inline-flex items-center text-[#00f0ff] hover:text-white transition-colors reveal">
+        <span class="font-['JetBrains_Mono'] text-sm">Visit live site</span>
         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
         </svg>
@@ -35,150 +41,421 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Stats Overview -->
-  <section class="py-8 border-y border-zinc-800/50 bg-zinc-900/30">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-sm text-zinc-500 mb-4 text-center">Performance after 4 months (Nov 2025 – Feb 2026)</p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div>
-          <div class="text-3xl font-semibold text-white">7.5K</div>
-          <div class="text-xs text-zinc-500 mt-1">Total URLs</div>
+  <!-- Stats Overview with Animated Bar Charts -->
+  <section class="relative py-12 border-y border-[#2a2a3a]/50 bg-[#0a0a0f] overflow-hidden">
+    <div class="absolute inset-0 bg-glow"></div>
+    
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-sm text-[#8b8b9a] mb-8 text-center font-['JetBrains_Mono']">Performance after 4 months (Nov 2025 – Feb 2026)</p>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <!-- Stat 1: URLs -->
+        <div class="stat-card bg-[#151520] border border-[#2a2a3a] rounded-2xl p-6 reveal">
+          <div class="flex items-end justify-between mb-4">
+            <span class="text-xs text-[#5b5b6a] font-['JetBrains_Mono']">URLS</span>
+            <svg class="w-5 h-5 text-[#00f0ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+            </svg>
+          </div>
+          
+          <div class="text-4xl font-bold text-white font-['JetBrains_Mono'] mb-3"><span class="stat-number" data-target="7500">0</span></div>
+          
+          <div class="h-2 bg-[#0a0a0f] rounded-full overflow-hidden">
+            <div class="stat-bar h-full bg-gradient-to-r from-[#00f0ff] to-[#00c8ff] rounded-full" data-width="100%"></div>
+          </div>
+          
+          <div class="text-xs text-[#5b5b6a] mt-2">Total URLs</div>
         </div>
-        <div>
-          <div class="text-3xl font-semibold text-white">1.78K</div>
-          <div class="text-xs text-zinc-500 mt-1">Indexed Pages</div>
+
+        <!-- Stat 2: Indexed -->
+        <div class="stat-card bg-[#151520] border border-[#2a2a3a] rounded-2xl p-6 reveal">
+          <div class="flex items-end justify-between mb-4">
+            <span class="text-xs text-[#5b5b6a] font-['JetBrains_Mono']">INDEXED</span>
+            <svg class="w-5 h-5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+          
+          <div class="text-4xl font-bold text-white font-['JetBrains_Mono'] mb-3"><span class="stat-number" data-target="1780">0</span></div>
+          
+          <div class="h-2 bg-[#0a0a0f] rounded-full overflow-hidden">
+            <div class="stat-bar h-full bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] rounded-full" data-width="85%"></div>
+          </div>
+          
+          <div class="text-xs text-[#5b5b6a] mt-2">Indexed Pages</div>
         </div>
-        <div>
-          <div class="text-3xl font-semibold text-white">4.1K</div>
-          <div class="text-xs text-zinc-500 mt-1">Organic Keywords</div>
+
+        <!-- Stat 3: Keywords -->
+        <div class="stat-card bg-[#151520] border border-[#2a2a3a] rounded-2xl p-6 reveal">
+          <div class="flex items-end justify-between mb-4">
+            <span class="text-xs text-[#5b5b6a] font-['JetBrains_Mono']">KEYWORDS</span>
+            <svg class="w-5 h-5 text-[#ff006e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/>
+            </svg>
+          </div>
+          
+          <div class="text-4xl font-bold text-white font-['JetBrains_Mono'] mb-3"><span class="stat-number" data-target="4100">0</span></div>
+          
+          <div class="h-2 bg-[#0a0a0f] rounded-full overflow-hidden">
+            <div class="stat-bar h-full bg-gradient-to-r from-[#ff006e] to-[#ff4d9e] rounded-full" data-width="95%"></div>
+          </div>
+          
+          <div class="text-xs text-[#5b5b6a] mt-2">Organic Keywords</div>
         </div>
-        <div>
-          <div class="text-3xl font-semibold text-white">463K</div>
-          <div class="text-xs text-zinc-500 mt-1">Impressions</div>
+
+        <!-- Stat 4: Impressions -->
+        <div class="stat-card bg-[#151520] border border-[#2a2a3a] rounded-2xl p-6 reveal">
+          <div class="flex items-end justify-between mb-4">
+            <span class="text-xs text-[#5b5b6a] font-['JetBrains_Mono']">VIEWS</span>
+            <svg class="w-5 h-5 text-[#00f0ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          
+          <div class="text-4xl font-bold text-white font-['JetBrains_Mono'] mb-3"><span class="stat-number" data-target="463">0</span>K</div>
+          
+          <div class="h-2 bg-[#0a0a0f] rounded-full overflow-hidden">
+            <div class="stat-bar h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full" data-width="90%"></div>
+          </div>
+          
+          <div class="text-xs text-[#5b5b6a] mt-2">Impressions</div>
+        </div>
+      </div>
+
+      <!-- Traffic Growth Chart -->
+      <div class="mt-12 bg-[#151520] border border-[#2a2a3a] rounded-2xl p-6 md:p-8 reveal">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="text-lg font-semibold text-white font-['Space_Grotesk']">Traffic Growth</h3>
+            <p class="text-sm text-[#8b8b9a]">Organic traffic over 4 months</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#00f0ff]"></span>
+            <span class="text-xs text-[#8b8b9a]">Monthly Visitors</span>
+          </div>
+        </div>
+
+        <div class="relative h-48 md:h-64">
+          <svg class="w-full h-full" viewBox="0 0 600 200" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3" />
+                <stop offset="100%" stop-color="#00f0ff" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            
+            <!-- Grid lines -->
+            <line x1="0" y1="50" x2="600" y2="50" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4" />
+            <line x1="0" y1="100" x2="600" y2="100" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4" />
+            <line x1="0" y1="150" x2="600" y2="150" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4" />
+            
+            <!-- Area under curve -->
+            <path class="chart-area" 
+                  d="M0,180 L100,170 L200,140 L300,100 L400,70 L500,40 L600,20 L600,200 L0,200 Z" 
+                  fill="url(#chartGradient)" 
+                  opacity="0" />
+            
+            <!-- Line -->
+            <path class="chart-line"
+                  d="M0,180 L100,170 L200,140 L300,100 L400,70 L500,40 L600,20"
+                  fill="none" 
+                  stroke="#00f0ff" 
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="800"
+                  stroke-dashoffset="800" />
+            
+            <!-- Data points -->
+            <circle class="chart-point" cx="0" cy="180" r="0" fill="#00f0ff" />
+            <circle class="chart-point" cx="100" cy="170" r="0" fill="#00f0ff" />
+            <circle class="chart-point" cx="200" cy="140" r="0" fill="#00f0ff" />
+            <circle class="chart-point" cx="300" cy="100" r="0" fill="#00f0ff" />
+            <circle class="chart-point" cx="400" cy="70" r="0" fill="#00f0ff" />
+            <circle class="chart-point" cx="500" cy="40" r="0" fill="#00f0ff" />
+            <circle class="chart-point" cx="600" cy="20" r="0" fill="#00f0ff" />
+          </svg>
+
+          <!-- X Axis Labels -->
+          <div class="flex justify-between mt-2 text-xs text-[#5b5b6a] font-['JetBrains_Mono']">
+            <span>Nov 2025</span>
+            <span>Dec 2025</span>
+            <span>Jan 2026</span>
+            <span>Feb 2026</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Case Study Content -->
-  <section class="py-16">
+  <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="prose prose-invert prose-zinc max-w-none">
-        <h2 class="text-2xl font-semibold text-white mb-4">The Challenge</h2>
-        <p class="text-zinc-400 mb-8">
-          Climbing is exploding in popularity, but finding a climbing gym while traveling or moving to a new city is surprisingly difficult. Most existing directories were outdated, incomplete, or buried in forum threads. I saw an opportunity to build something comprehensive, fast, and SEO-optimized from day one.
-        </p>
-
-        <h2 class="text-2xl font-semibold text-white mb-4">The Approach</h2>
-        
-        <h3 class="text-lg font-medium text-white mb-2">1. Data-First Strategy</h3>
-        <p class="text-zinc-400 mb-6">
-          Instead of building a skeleton and hoping content would come, I started with data. I compiled a comprehensive dataset of climbing gyms worldwide—locations, contact info, facility details, and equipment. This gave me a solid foundation of thousands of pages ready to go at launch.
-        </p>
-
-        <h3 class="text-lg font-medium text-white mb-2">2. SEO-Optimized Structure</h3>
-        <p class="text-zinc-400 mb-6">
-          Every page was built with search intent in mind. City pages target "climbing gyms in [city]" queries. Individual gym pages capture "[gym name]" branded searches. The URL structure follows a logical hierarchy: /country/state/city/gym-name. Sitemaps are auto-generated and submitted to Google Search Console daily.
-        </p>
-
-        <h3 class="text-lg font-medium text-white mb-2">3. Performance First</h3>
-        <p class="text-zinc-400 mb-6">
-          Built with Astro for static generation, the site loads in under a second. Core Web Vitals are consistently in the green. Fast load times aren't just good for users—they're a ranking factor, and Google rewards sites that don't waste crawler budget on slow pages.
-        </p>
-
-        <h3 class="text-lg font-medium text-white mb-2">4. Content That Ranks</h3>
-        <p class="text-zinc-400 mb-8">
-          Beyond the directory listings, I created informational content around climbing—guides for beginners, equipment recommendations, and city-specific climbing scenes. This topical authority helps the commercial pages rank by showing Google this is a comprehensive resource, not just a thin affiliate site.
-        </p>
-
-        <h2 class="text-2xl font-semibold text-white mb-4">The Results</h2>
-
-        <p class="text-zinc-400 mb-6">Four months in, the numbers tell the story:</p>
-
-        <ul class="space-y-2 text-zinc-400 mb-8">
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span><strong class="text-zinc-200">7.5K URLs</strong> generated programmatically from structured data</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span><strong class="text-zinc-200">1.78K pages</strong> indexed by Google</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span><strong class="text-zinc-200">4.1K organic keywords</strong> ranking in Google</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span><strong class="text-zinc-200">~997 organic visitors</strong> per month and growing</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span><strong class="text-zinc-200">531 AI-cited pages</strong> showing up in ChatGPT and Perplexity</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span><strong class="text-zinc-200">463K impressions</strong> in the last 30 days</span>
-          </li>
-        </ul>
-
-        <h2 class="text-2xl font-semibold text-white mb-4">What I Learned</h2>
-        
-        <p class="text-zinc-400 mb-4">
-          <strong class="text-zinc-200">Data quality matters more than quantity.</strong> Having 7,500 pages means nothing if they're thin or duplicate. I spent more time cleaning and structuring the data than building the site itself.
-        </p>
-
-        <p class="text-zinc-400 mb-4">
-          <strong class="text-zinc-200">Internal linking is underrated.</strong> Connecting city pages to country pages, nearby gyms to each other—this web of connections helps Google discover and understand the site's structure.
-        </p>
-
-        <p class="text-zinc-400 mb-8">
-          <strong class="text-zinc-200">AI search is the next frontier.</strong> Getting cited by ChatGPT and Perplexity isn't accidental—it comes from having clear, factual, well-structured content that AI systems can easily parse and reference.
-        </p>
-
-        <h2 class="text-2xl font-semibold text-white mb-4">The Tech Stack</h2>
-        
-        <div class="flex flex-wrap gap-2 mb-8">
-          <span class="px-3 py-1.5 rounded-full bg-zinc-800 text-zinc-300 text-sm">Astro</span>
-          <span class="px-3 py-1.5 rounded-full bg-zinc-800 text-zinc-300 text-sm">React</span>
-          <span class="px-3 py-1.5 rounded-full bg-zinc-800 text-zinc-300 text-sm">TypeScript</span>
-          <span class="px-3 py-1.5 rounded-full bg-zinc-800 text-zinc-300 text-sm">Tailwind CSS</span>
-          <span class="px-3 py-1.5 rounded-full bg-zinc-800 text-zinc-300 text-sm">PostgreSQL</span>
-          <span class="px-3 py-1.5 rounded-full bg-zinc-800 text-zinc-300 text-sm">Vercel</span>
+      <div class="space-y-16 reveal">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 font-['Space_Grotesk']">The Challenge</h2>
+          <p class="text-[#8b8b9a] leading-relaxed">
+            Climbing is exploding in popularity, but finding a climbing gym while traveling or moving to a new city is surprisingly difficult. Most existing directories were outdated, incomplete, or buried in forum threads. I saw an opportunity to build something comprehensive, fast, and SEO-optimized from day one.
+          </p>
         </div>
 
-        <h2 class="text-2xl font-semibold text-white mb-4">What's Next</h2>
-        
-        <p class="text-zinc-400">
-          The site continues to grow. I'm adding user-generated features—reviews, photos, gym updates submitted by the community. The goal is to make it not just the biggest climbing gym directory, but the most useful one.
-        </p>
-      </div>
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 font-['Space_Grotesk']">The Approach</h2>
+          
+          <div class="space-y-8">
+            <div class="flex gap-5">
+              <div class="w-12 h-12 rounded-xl bg-[#00f0ff]/10 border border-[#00f0ff]/20 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#00f0ff] font-bold font-['JetBrains_Mono']">01</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-2">Data-First Strategy</h3>
+                <p class="text-[#8b8b9a]">Instead of building a skeleton and hoping content would come, I started with data. I compiled a comprehensive dataset of climbing gyms worldwide—locations, contact info, facility details, and equipment. This gave me a solid foundation of thousands of pages ready to go at launch.</p>
+              </div>
+            </div>
 
+            <div class="flex gap-5">
+              <div class="w-12 h-12 rounded-xl bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#8b5cf6] font-bold font-['JetBrains_Mono']">02</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-2">SEO-Optimized Structure</h3>
+                <p class="text-[#8b8b9a]">Every page was built with search intent in mind. City pages target "climbing gyms in [city]" queries. Individual gym pages capture "[gym name]" branded searches. The URL structure follows a logical hierarchy: /country/state/city/gym-name.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-5">
+              <div class="w-12 h-12 rounded-xl bg-[#ff006e]/10 border border-[#ff006e]/20 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#ff006e] font-bold font-['JetBrains_Mono']">03</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-2">Performance First</h3>
+                <p class="text-[#8b8b9a]">Built with Astro for static generation, the site loads in under a second. Core Web Vitals are consistently in the green. Fast load times aren't just good for users—they're a ranking factor.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-5">
+              <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0">
+                <span class="text-orange-500 font-bold font-['JetBrains_Mono']">04</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-2">Content That Ranks</h3>
+                <p class="text-[#8b8b9a]">Beyond the directory listings, I created informational content around climbing—guides for beginners, equipment recommendations, and city-specific climbing scenes. This topical authority helps the commercial pages rank.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 font-['Space_Grotesk']">The Results</h2>
+          
+          <p class="text-[#8b8b9a] mb-6">Four months in, the numbers tell the story:</p>
+
+          <ul class="space-y-3">
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-[#00f0ff]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-[#00f0ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <span class="text-[#e2e2e8]"><strong class="text-white">7.5K URLs</strong> generated programmatically from structured data</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-[#8b5cf6]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <span class="text-[#e2e2e8]"><strong class="text-white">1.78K pages</strong> indexed by Google</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-[#ff006e]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-[#ff006e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <span class="text-[#e2e2e8]"><strong class="text-white">4.1K organic keywords</strong> ranking in Google</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <span class="text-[#e2e2e8]"><strong class="text-white">~997 organic visitors</strong> per month and growing</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-[#00f0ff]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-[#00f0ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <span class="text-[#e2e2e8]"><strong class="text-white">531 AI-cited pages</strong> showing up in ChatGPT and Perplexity</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-[#8b5cf6]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <span class="text-[#e2e2e8]"><strong class="text-white">463K impressions</strong> in the last 30 days</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 font-['Space_Grotesk']">What I Learned</h2>
+          
+          <p class="text-[#8b8b9a] mb-4">
+            <strong class="text-white">Data quality matters more than quantity.</strong> Having 7,500 pages means nothing if they're thin or duplicate. I spent more time cleaning and structuring the data than building the site itself.
+          </p>
+
+          <p class="text-[#8b8b9a] mb-4">
+            <strong class="text-white">Internal linking is underrated.</strong> Connecting city pages to country pages, nearby gyms to each other—this web of connections helps Google discover and understand the site's structure.
+          </p>
+
+          <p class="text-[#8b8b9a]">
+            <strong class="text-white">AI search is the next frontier.</strong> Getting cited by ChatGPT and Perplexity isn't accidental—it comes from having clear, factual, well-structured content that AI systems can easily parse and reference.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 font-['Space_Grotesk']">The Tech Stack</h2>
+          
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 rounded-lg bg-[#151520] border border-[#2a2a3a] text-[#e2e2e8] font-['JetBrains_Mono']">Astro</span>
+            <span class="px-4 py-2 rounded-lg bg-[#151520] border border-[#2a2a3a] text-[#e2e2e8] font-['JetBrains_Mono']">React</span>
+            <span class="px-4 py-2 rounded-lg bg-[#151520] border border-[#2a2a3a] text-[#e2e2e8] font-['JetBrains_Mono']">TypeScript</span>
+            <span class="px-4 py-2 rounded-lg bg-[#151520] border border-[#2a2a3a] text-[#e2e2e8] font-['JetBrains_Mono']">Tailwind CSS</span>
+            <span class="px-4 py-2 rounded-lg bg-[#151520] border border-[#2a2a3a] text-[#e2e2e8] font-['JetBrains_Mono']">PostgreSQL</span>
+            <span class="px-4 py-2 rounded-lg bg-[#151520] border border-[#2a2a3a] text-[#e2e2e8] font-['JetBrains_Mono']">Vercel</span>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 font-['Space_Grotesk']">What's Next</h2>
+          
+          <p class="text-[#8b8b9a]">
+            The site continues to grow. I'm adding user-generated features—reviews, photos, gym updates submitted by the community. The goal is to make it not just the biggest climbing gym directory, but the most useful one.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 border-t border-zinc-800/50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-2xl font-semibold text-white mb-4">Want results like this?</h2>
-      <p class="text-zinc-400 mb-8">I can build your directory with the same approach. Let's talk.</p>
+  <section class="relative py-16 md:py-24 border-t border-[#2a2a3a]/50">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#00f0ff]/5 to-transparent"></div>
+    
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk']">Want results like this?</h2>
+      <p class="text-[#8b8b9a] mb-8">I can build your directory with the same approach. Let's talk.</p>
       
-      <a href="/pricing" class="inline-flex items-center px-6 py-3 text-base font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
+      <a href="/pricing" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#00f0ff] to-[#00c8ff] rounded-xl hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all btn-cyber glow-cyan">
         View Pricing
       </a>
     </div>
   </section>
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => {
+      gsap.fromTo(el, 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+
+    // Stat cards animation with counters and bars
+    const statCards = document.querySelectorAll('.stat-card');
+    statCards.forEach((card, index) => {
+      const numberEl = card.querySelector('.stat-number');
+      const barEl = card.querySelector('.stat-bar');
+      const target = parseInt(numberEl.getAttribute('data-target'));
+      const targetWidth = barEl.getAttribute('data-width');
+      
+      ScrollTrigger.create({
+        trigger: card,
+        start: 'top 80%',
+        onEnter: () => {
+          // Animate counter
+          gsap.to(numberEl, {
+            textContent: target,
+            duration: 1.5,
+            delay: index * 0.1,
+            ease: 'power2.out',
+            snap: { textContent: 1 },
+            onUpdate: function() {
+              if (target > 1000) {
+                numberEl.textContent = Math.round(this.targets()[0].textContent / 100) / 10 + 'K';
+              }
+            }
+          });
+          
+          // Animate bar
+          gsap.to(barEl, {
+            width: targetWidth,
+            duration: 1,
+            delay: index * 0.1 + 0.3,
+            ease: 'power2.out'
+          });
+        },
+        once: true
+      });
+    });
+
+    // Chart animation
+    const chartObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate line
+          gsap.to('.chart-line', {
+            strokeDashoffset: 0,
+            duration: 2,
+            ease: 'power2.inOut'
+          });
+          
+          // Animate area
+          gsap.to('.chart-area', {
+            opacity: 1,
+            duration: 1,
+            delay: 0.5
+          });
+          
+          // Animate points
+          gsap.to('.chart-point', {
+            attr: { r: 5 },
+            duration: 0.3,
+            stagger: 0.1,
+            delay: 1.5,
+            ease: 'back.out(2)'
+          });
+          
+          chartObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const chartContainer = document.querySelector('.chart-line')?.closest('.reveal');
+    if (chartContainer) {
+      chartObserver.observe(chartContainer);
+    }
+  </script>
 </Layout>

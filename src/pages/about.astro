@@ -1,134 +1,358 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const timeline = [
+  {
+    year: '2024',
+    title: 'The Beginning',
+    description: 'Started exploring programmatic SEO and the power of structured data. Built my first directory as an experiment.',
+    icon: 'rocket'
+  },
+  {
+    year: '2025',
+    title: 'IndoorClimbingGym Launch',
+    description: 'Launched the first major project. 7.5K URLs, comprehensive data, and a focus on SEO from day one.',
+    icon: 'mountain',
+    highlight: true
+  },
+  {
+    year: '2026',
+    title: 'Stackbase is Born',
+    description: 'Formalized the service offering. Launched GolfSimMap. Started helping others build directories that rank.',
+    icon: 'grid',
+    highlight: true
+  }
+];
+
+const values = [
+  {
+    title: 'Quality over Quantity',
+    description: 'I don\'t take on every project. I focus on niches I understand and clients I can genuinely help.',
+    icon: 'star',
+    color: '#00f0ff'
+  },
+  {
+    title: 'Performance First',
+    description: 'Slow sites don\'t rank. I use modern tools like Astro and Next.js to build directories that load instantly.',
+    icon: 'zap',
+    color: '#8b5cf6'
+  },
+  {
+    title: 'SEO is Strategy',
+    description: 'I don\'t just build pretty sites—I build sites that rank. Best practices baked in from day one.',
+    icon: 'search',
+    color: '#ff006e'
+  },
+  {
+    title: 'Honest Partnership',
+    description: 'I won\'t promise you #1 rankings. What I will promise is solid work and transparent communication.',
+    icon: 'shield',
+    color: '#f59e0b'
+  }
+];
 ---
 
 <Layout title="About" description="The story behind Stackbase and why I build directories.">
   <!-- Header -->
-  <section class="pt-24 pb-16">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-semibold text-white mb-6">About</h1>
+  <section class="relative pt-24 md:pt-32 pb-16 overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-gradient-to-b from-[#00f0ff]/5 to-transparent blur-3xl"></div>
+    
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-sm text-[#00f0ff] font-['JetBrains_Mono'] tracking-wider">ABOUT</span>
       
-      <p class="text-xl text-zinc-400 leading-relaxed">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 mb-6 font-['Space_Grotesk']">Why I build <span class="text-gradient">directories</span></h1>
+      
+      <p class="text-xl text-[#8b8b9a] leading-relaxed max-w-2xl mx-auto">
         I'm a solo builder who believes directories are underrated. In a world of algorithmic feeds, there's something powerful about well-organized, human-curated collections.
       </p>
     </div>
   </section>
 
-  <!-- Story -->
-  <section class="py-16 border-t border-zinc-800/50">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Story Section -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="prose prose-invert prose-zinc max-w-none">
-        <h2 class="text-2xl font-semibold text-white mb-4">Why Directories?</h2>
-        
-        <p class="text-zinc-400 mb-6">
-          I've spent years working on various web projects—SaaS apps, content sites, e-commerce stores. But I keep coming back to directories. There's something satisfying about organizing information in a way that helps people find exactly what they're looking for.
-        </p>
-
-        <p class="text-zinc-400 mb-6">
-          A good directory isn't just a list of links. It's a curated experience. It understands user intent. It surfaces the right information at the right time. And when done well, it becomes the default resource for an entire niche.
-        </p>
-
-        <p class="text-zinc-400 mb-8">
-          That's what I'm building. Not just websites, but destination resources that people actually want to use.
-        </p>
-
-        <h2 class="text-2xl font-semibold text-white mb-4">My Philosophy</h2>
-
-        <div class="space-y-6 mb-8">
-          <div class="flex gap-4">
-            <div class="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-lg font-medium text-white mb-1">Quality over Quantity</h3>
-              <p class="text-zinc-500 text-sm">I don't take on every project. I focus on niches I understand and clients I can genuinely help. Two great directories beat ten mediocre ones.</p>
-            </div>
-          </div>
-
-          <div class="flex gap-4">
-            <div class="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-lg font-medium text-white mb-1">Performance First</h3>
-              <p class="text-zinc-500 text-sm">Slow sites don't rank. I use modern tools like Astro and Next.js to build directories that load instantly and score 95+ on Core Web Vitals.</p>
-            </div>
-          </div>
-
-          <div class="flex gap-4">
-            <div class="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-lg font-medium text-white mb-1">SEO is Strategy</h3>
-              <p class="text-zinc-500 text-sm">I don't just build pretty sites—I build sites that rank. URL structure, internal linking, schema markup, and page speed are baked into every project from day one.</p>
-            </div>
-          </div>
-
-          <div class="flex gap-4">
-            <div class="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-lg font-medium text-white mb-1">Honest Partnership</h3>
-              <p class="text-zinc-500 text-sm">I won't promise you #1 rankings or instant traffic. What I will promise is solid work, transparent communication, and a site built on best practices that has the best chance to succeed long-term.</p>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-[#00f0ff]/20 to-[#8b5cf6]/20 rounded-3xl blur-2xl"></div>
+            
+            <div class="relative bg-[#151520] border border-[#2a2a3a] rounded-2xl p-8">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00f0ff] to-[#8b5cf6] flex items-center justify-center">
+                  <svg class="w-8 h-8 text-[#0a0a0f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                  </svg>
+                </div>
+                
+                <div>
+                  <div class="text-2xl font-bold text-white font-['JetBrains_Mono']">2</div>
+                  <div class="text-sm text-[#8b8b9a]">Active Projects</div>
+                </div>
+              </div>
+              
+              <div class="space-y-4">
+                <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 bg-[#0a0a0f] rounded-xl border border-[#2a2a3a] hover:border-[#00f0ff]/30 transition-colors group">
+                  <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                  </div>
+                  
+                  <div class="flex-1">
+                    <div class="text-white font-medium group-hover:text-[#00f0ff] transition-colors">IndoorClimbingGym.com</div>
+                    <div class="text-xs text-[#8b8b9a]">7.5K URLs • 463K impressions</div>
+                  </div>
+                  
+                  <svg class="w-5 h-5 text-[#8b8b9a] group-hover:text-[#00f0ff] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+                
+                <a href="https://golfsimmap.com" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 bg-[#0a0a0f] rounded-xl border border-[#2a2a3a] hover:border-[#8b5cf6]/30 transition-colors group">
+                  <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                  </div>
+                  
+                  <div class="flex-1">
+                    <div class="text-white font-medium group-hover:text-[#8b5cf6] transition-colors">GolfSimMap.com</div>
+                    <div class="text-xs text-[#8b8b9a]">DR 13 in 1 week • Recently launched</div>
+                  </div>
+                  
+                  <svg class="w-5 h-5 text-[#8b8b9a] group-hover:text-[#8b5cf6] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-
-        <h2 class="text-2xl font-semibold text-white mb-4">What Makes Me Different</h2>
         
-        <p class="text-zinc-400 mb-6">
-          I'm not an agency. There's no account manager, no junior developer, no offshore team. When you work with me, you work with me. I handle everything from the initial conversation to the final deployment.
-        </p>
-
-        <p class="text-zinc-400 mb-8">
-          That means faster decisions, clearer communication, and a site that's actually built by the person you're talking to. It also means I can only take on a few projects at a time—which is exactly how I want it.
-        </p>
-
-        <h2 class="text-2xl font-semibold text-white mb-4">My Work</h2>
-        
-        <p class="text-zinc-400 mb-6">
-          I currently run two directories:
-        </p>
-
-        <ul class="space-y-3 mb-8">
-          <li>
-            <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300 transition-colors">IndoorClimbingGym.com</a>
-            <span class="text-zinc-500"> — The largest directory of indoor climbing gyms worldwide. 7.5K URLs, 4.1K organic keywords, 463K impressions.</span>
-          </li>
-          <li>
-            <a href="https://golfsimmap.com" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300 transition-colors">GolfSimMap.com</a>
-            <span class="text-zinc-500"> — Find golf simulators near you. Recently launched, hit DR 13 within a week.</span>
-          </li>
-        </ul>
-
-        <p class="text-zinc-400 mb-8">
-          These aren't case studies from years ago—they're live, growing projects that I actively maintain and improve.
-        </p>
-
-        <h2 class="text-2xl font-semibold text-white mb-4">Let's Talk</h2>
-        
-        <p class="text-zinc-400">
-          If you have a niche in mind—whether it's a hobby, an industry, or a local market—I'd love to hear about it. Not every niche is right for a directory, and I'll tell you honestly if I think yours has potential or not.
-        </p>
+        <div class="space-y-6 reveal">
+          <h2 class="text-3xl md:text-4xl font-bold text-white font-['Space_Grotesk']">A good directory is more than a list</h2>
+          
+          <p class="text-[#8b8b9a] leading-relaxed">
+            I've spent years working on various web projects—SaaS apps, content sites, e-commerce stores. But I keep coming back to directories. There's something satisfying about organizing information in a way that helps people find exactly what they're looking for.
+          </p>
+          
+          <p class="text-[#8b8b9a] leading-relaxed">
+            A good directory isn't just a list of links. It's a curated experience. It understands user intent. It surfaces the right information at the right time. And when done well, it becomes the default resource for an entire niche.
+          </p>
+          
+          <p class="text-[#8b8b9a] leading-relaxed">
+            That's what I'm building. Not just websites, but destination resources that people actually want to use.
+          </p>
+        </div>
       </div>
-
-      <div class="text-center mt-12">
-        <a href="/pricing" class="inline-flex items-center px-6 py-3 text-base font-medium text-zinc-950 bg-white rounded-lg hover:bg-zinc-200 transition-colors">
-          View Pricing
-        </a>
-      </div>
-
     </div>
   </section>
+
+  <!-- Timeline Section -->
+  <section class="py-16 md:py-24 border-t border-[#2a2a3a]/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16 reveal">
+        <span class="text-sm text-[#00f0ff] font-['JetBrains_Mono'] tracking-wider">THE JOURNEY</span>
+        
+        <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 font-['Space_Grotesk']">How we got <span class="text-gradient">here</span></h2>
+      </div>
+
+      <div class="relative">
+        <!-- Timeline Line -->
+        <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#00f0ff] via-[#8b5cf6] to-[#ff006e] timeline-line"></div>
+
+        <div class="space-y-12">
+          {timeline.map((item, index) => (
+            <div class={`relative flex items-start gap-8 timeline-item ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <!-- Timeline Node -->
+              <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-10">
+                <div class={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                  item.highlight 
+                    ? 'bg-gradient-to-br from-[#00f0ff] to-[#8b5cf6] shadow-[0_0_20px_rgba(0,240,255,0.4)]' 
+                    : 'bg-[#151520] border border-[#2a2a3a]'
+                }`}>
+                  <svg class={`w-6 h-6 ${item.highlight ? 'text-[#0a0a0f]' : 'text-[#8b8b9a]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {item.icon === 'rocket' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>}
+                    {item.icon === 'mountain' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>}
+                    {item.icon === 'grid' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>}
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class={`ml-20 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
+                <div class={`timeline-content bg-[#151520]/50 border border-[#2a2a3a] rounded-xl p-6 hover:border-[#00f0ff]/30 transition-all ${item.highlight ? 'glow-border' : ''}`}>
+                  <span class="text-[#00f0ff] font-['JetBrains_Mono'] text-sm">{item.year}</span>
+                  
+                  <h3 class="text-xl font-bold text-white mt-2 mb-3 font-['Space_Grotesk']">{item.title}</h3>
+                  
+                  <p class="text-[#8b8b9a] text-sm">{item.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-16 md:py-24 border-t border-[#2a2a3a]/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16 reveal">
+        <span class="text-sm text-[#00f0ff] font-['JetBrains_Mono'] tracking-wider">PHILOSOPHY</span>
+        
+        <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 font-['Space_Grotesk']">How I <span class="text-gradient">work</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {values.map((value, index) => (
+          <div 
+            class="value-card group p-8 bg-[#151520]/50 border border-[#2a2a3a] rounded-2xl hover:border-[#00f0ff]/30 transition-all reveal"
+            style={`transition-delay: ${index * 100}ms`}
+          >
+            <div class="flex items-start gap-5">
+              <div 
+                class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 transition-all"
+                style={`background-color: ${value.color}15; border: 1px solid ${value.color}30`}
+              >
+                <svg class="w-7 h-7" style={`color: ${value.color}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {value.icon === 'star' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>}
+                  {value.icon === 'zap' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>}
+                  {value.icon === 'search' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>}
+                  {value.icon === 'shield' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>}
+                </svg>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#00f0ff] transition-colors font-['Space_Grotesk']">{value.title}</h3>
+                <p class="text-[#8b8b9a]">{value.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What Makes Me Different -->
+  <section class="py-16 md:py-24 border-t border-[#2a2a3a]/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <span class="text-sm text-[#00f0ff] font-['JetBrains_Mono'] tracking-wider">THE DIFFERENCE</span>
+      
+      <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-6 font-['Space_Grotesk']">Not an <span class="text-gradient">agency</span></h2>
+      
+      <p class="text-[#8b8b9a] text-lg leading-relaxed mb-8">
+        I'm not an agency. There's no account manager, no junior developer, no offshore team. When you work with me, you work with me. I handle everything from the initial conversation to the final deployment.
+      </p>
+      
+      <p class="text-[#8b8b9a] text-lg leading-relaxed">
+        That means faster decisions, clearer communication, and a site that's actually built by the person you're talking to. It also means I can only take on a few projects at a time—which is exactly how I want it.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-24">
+    <div class="absolute inset-0">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#00f0ff]/10 via-[#8b5cf6]/10 to-[#ff006e]/10 rounded-full blur-[120px]"></div>
+    </div>
+    
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 font-['Space_Grotesk']">Let's build something <span class="text-gradient">together</span></h2>
+      
+      <p class="text-[#8b8b9a] text-lg mb-10">If you have a niche in mind, I'd love to hear about it. Not every niche is right for a directory, and I'll tell you honestly if I think yours has potential or not.</p>
+      
+      <a href="/pricing" class="inline-flex items-center px-10 py-5 text-lg font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#00f0ff] to-[#00c8ff] rounded-xl hover:shadow-[0_0_40px_rgba(0,240,255,0.4)] transition-all btn-cyber glow-cyan">
+        View Pricing
+      </a>
+    </div>
+  </section>
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => {
+      gsap.fromTo(el, 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+
+    // Timeline line animation
+    gsap.fromTo('.timeline-line', 
+      { scaleY: 0 },
+      {
+        scaleY: 1,
+        duration: 1.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.timeline-line',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+
+    // Timeline items animation
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach((item, index) => {
+      gsap.fromTo(item, 
+        { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          delay: index * 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+
+    // Value cards hover effect
+    const valueCards = document.querySelectorAll('.value-card');
+    valueCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, { 
+          y: -5, 
+          boxShadow: '0 20px 40px rgba(0, 240, 255, 0.1)',
+          duration: 0.3, 
+          ease: 'power2.out' 
+        });
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { 
+          y: 0, 
+          boxShadow: 'none',
+          duration: 0.3, 
+          ease: 'power2.out' 
+        });
+      });
+    });
+  </script>
 </Layout>
