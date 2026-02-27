@@ -15,6 +15,7 @@ const { title, description = "I build directories that rank. Premium directory w
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
+  <script>document.documentElement.classList.add('has-js')</script>
   <title>{title} | Stackbase</title>
   <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,7 +90,7 @@ const { title, description = "I build directories that rank. Premium directory w
     <slot />
   </main>
 
-  <footer class="border-t border-[#2a2a3a]/50 mt-10 bg-[#0a0a0f]">
+  <footer class="border-t border-[#2a2a3a]/50 mt-0 bg-[#0a0a0f]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
         <div class="md:col-span-2">
