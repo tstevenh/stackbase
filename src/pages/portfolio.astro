@@ -24,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="space-y-16 md:space-y-24">
         
         <!-- Project 1: IndoorClimbingGym -->
-        <article class="tilt-card group">
+        <article class="group">
           <div class="bg-[#151520] border border-[#2a2a3a] rounded-3xl overflow-hidden glow-border hover:border-[#00f0ff]/30 transition-all duration-500">
             <div class="grid lg:grid-cols-2">
               <div class="aspect-video lg:aspect-auto border-b lg:border-b-0 lg:border-r border-[#2a2a3a] relative overflow-hidden">
@@ -91,7 +91,7 @@ import Layout from '../layouts/Layout.astro';
                   </div>
                 </div>
                 
-                <div class="flex flex-wrap gap-3">
+                <div class="relative z-20 flex flex-wrap gap-3">
                   <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#00f0ff] to-[#00c8ff] rounded-xl hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all">
                     Visit Site
                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,7 +108,7 @@ import Layout from '../layouts/Layout.astro';
         </article>
 
         <!-- Project 2: GolfSimMap -->
-        <article class="tilt-card group">
+        <article class="group">
           <div class="bg-[#151520] border border-[#2a2a3a] rounded-3xl overflow-hidden glow-border hover:border-[#8b5cf6]/30 transition-all duration-500">
             <div class="grid lg:grid-cols-2">
               <div class="aspect-video lg:aspect-auto border-b lg:border-b-0 lg:border-r border-[#2a2a3a] relative overflow-hidden">
@@ -153,14 +153,14 @@ import Layout from '../layouts/Layout.astro';
                   <h4 class="text-sm font-semibold text-white mb-4 font-['Space_Grotesk']">Tech Stack</h4>
                   
                   <div class="flex flex-wrap gap-2">
-                    <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">Astro</span>
-                    <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">React</span>
+                    <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">Next.js 16</span>
+                    <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">Supabase</span>
                     <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">Tailwind CSS</span>
-                    <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">TypeScript</span>
+                    <span class="px-4 py-2 rounded-lg bg-[#0a0a0f] border border-[#2a2a3a] text-[#e2e2e8] text-sm font-['JetBrains_Mono']">Schema SEO</span>
                   </div>
                 </div>
                 
-                <div class="flex flex-wrap gap-3">
+                <div class="relative z-20 flex flex-wrap gap-3">
                   <a href="https://golfsimmap.com" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-[#0a0a0f] bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] rounded-xl hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all">
                     Visit Site
                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -220,7 +220,8 @@ import Layout from '../layouts/Layout.astro';
       );
     });
 
-    // 3D Tilt effect
+    
+// 3D Tilt effect
     const tiltCards = document.querySelectorAll('.tilt-card');
     
     const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
