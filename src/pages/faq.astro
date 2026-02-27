@@ -66,6 +66,15 @@ const faqs = [
 ---
 
 <Layout title="FAQ | Directory Website Build Questions" description="Answers to common questions about pricing, scope, data imports, SEO setup, timelines, and support for directory builds.">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer }
+    }))
+  })}></script>
   <!-- Header -->
   <section class="pt-24 pb-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

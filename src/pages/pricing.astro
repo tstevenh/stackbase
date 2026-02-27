@@ -101,6 +101,24 @@ const addons = [
 ---
 
 <Layout title="Pricing | Directory Website Packages" description="Transparent pricing for directory website builds: Launch, Growth, and Authority plans plus optional data enrichment add-ons.">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Directory Website Build Service',
+    provider: {
+      '@type': 'Organization',
+      name: 'Stackbase System',
+      url: 'https://stackbasesystem.com'
+    },
+    areaServed: 'US',
+    offers: plans.map((p) => ({
+      '@type': 'Offer',
+      name: p.name,
+      price: p.price.replace('$',''),
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock'
+    }))
+  })}></script>
   <!-- Header -->
   <section class="relative pt-24 md:pt-32 pb-16 overflow-hidden">
     <div class="absolute inset-0 bg-glow"></div>
