@@ -4,9 +4,20 @@ import '../styles/global.css';
 export interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  noindex?: boolean;
 }
 
-const { title, description = "I build directories that rank. Premium directory websites for niche communities." } = Astro.props;
+const {
+  title,
+  description = "I build directories that rank. Premium directory websites for niche communities.",
+  ogImage = '/logo.png',
+  noindex = false
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString() ?? 'https://stackbasesystem.com';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageUrl = new URL(ogImage, siteUrl).toString();
 ---
 
 <!DOCTYPE html>
@@ -15,12 +26,37 @@ const { title, description = "I build directories that rank. Premium directory w
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
+  <meta name="author" content="Stackbase System" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large'} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Stackbase System" />
+  <meta property="og:title" content={`${title} | Stackbase System`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={ogImageUrl} />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${title} | Stackbase System`} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
   <script>document.documentElement.classList.add('has-js')</script>
   <title>{title} | Stackbase System</title>
   <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Stackbase System',
+    url: siteUrl,
+    email: 'tim@stackbasesystem.com',
+    sameAs: ['https://x.com/Timhrt_']
+  })}></script>
 </head>
 <body class="bg-[#0a0a0f] text-[#e2e2e8] antialiased overflow-x-hidden">
   <!-- Film Grain Overlay -->

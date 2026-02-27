@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  integrations: [tailwind()],
-  site: 'https://stackbase.directory'
+  integrations: [tailwind(), sitemap()],
+  site: 'https://stackbasesystem.com'
 });
