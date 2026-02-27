@@ -329,6 +329,27 @@ html {
   }
 }
 
+/* Hero content readability shell */
+.hero-content-shell {
+  background: radial-gradient(ellipse at center, rgba(10,10,15,0.72) 0%, rgba(10,10,15,0.35) 55%, rgba(10,10,15,0) 100%);
+  border-radius: 24px;
+}
+
+/* Hero visual safety (prevent overlap on medium screens) */
+@media (max-width: 1536px) {
+  #hero-svg .counter-box,
+  #hero-svg .connect-line {
+    display: none;
+  }
+}
+
+@media (max-width: 1280px) {
+  #hero-svg {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
