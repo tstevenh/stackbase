@@ -27,24 +27,9 @@ import Layout from '../layouts/Layout.astro';
         <article class="tilt-card group reveal">
           <div class="bg-[#151520] border border-[#2a2a3a] rounded-3xl overflow-hidden glow-border hover:border-[#00f0ff]/30 transition-all duration-500">
             <div class="grid lg:grid-cols-2">
-              <div class="aspect-video lg:aspect-auto bg-gradient-to-br from-[#1a1520] via-[#151020] to-[#0f0a15] flex items-center justify-center border-b lg:border-b-0 lg:border-r border-[#2a2a3a] relative overflow-hidden p-8">
-                <!-- Animated Grid Background -->
-                <div class="absolute inset-0 opacity-20">
-                  <div class="absolute inset-0" id="climbing-grid" style="background-image: linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px); background-size: 30px 30px;"></div>
-                </div>
-                
-                <div class="relative text-center z-10">
-                  <div class="relative inline-block">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-orange-500/30 to-red-600/30 rounded-3xl blur-xl pulse-live"></div>
-                    <div class="relative w-28 h-28 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center shadow-2xl">
-                      <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  
-                  <a href="https://indoorclimbinggym.com" target="_blank" rel="noopener" class="text-lg text-[#00f0ff] hover:text-white transition-colors font-['JetBrains_Mono']">indoorclimbinggym.com</a>
-                </div>
+              <div class="aspect-video lg:aspect-auto border-b lg:border-b-0 lg:border-r border-[#2a2a3a] relative overflow-hidden">
+                <img src="/images/portfolio/indoorclimbinggym-hero.png" alt="IndoorClimbingGym hero section" class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/40 to-transparent"></div>
               </div>
               
               <div class="p-8 lg:p-12">
@@ -126,26 +111,9 @@ import Layout from '../layouts/Layout.astro';
         <article class="tilt-card group reveal">
           <div class="bg-[#151520] border border-[#2a2a3a] rounded-3xl overflow-hidden glow-border hover:border-[#8b5cf6]/30 transition-all duration-500">
             <div class="grid lg:grid-cols-2">
-              <div class="aspect-video lg:aspect-auto bg-gradient-to-br from-[#0f1a15] via-[#0a1510] to-[#05100a] flex items-center justify-center border-b lg:border-b-0 lg:border-r border-[#2a2a3a] relative overflow-hidden p-8">
-                <!-- Animated Grid Background -->
-                <div class="absolute inset-0 opacity-20">
-                  <div class="absolute inset-0" id="golf-grid" style="background-image: linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px); background-size: 30px 30px;"></div>
-                </div>
-                
-                <div class="relative text-center z-10">
-                  <div class="relative inline-block">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-green-500/30 to-emerald-600/30 rounded-3xl blur-xl pulse-live"></div>
-                    
-                    <div class="relative w-28 h-28 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-2xl">
-                      <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  
-                  <a href="https://golfsimmap.com" target="_blank" rel="noopener" class="text-lg text-[#8b5cf6] hover:text-white transition-colors font-['JetBrains_Mono']">golfsimmap.com</a>
-                </div>
+              <div class="aspect-video lg:aspect-auto border-b lg:border-b-0 lg:border-r border-[#2a2a3a] relative overflow-hidden">
+                <img src="/images/portfolio/golfsimmap-hero.png" alt="GolfSimMap hero section" class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/40 to-transparent"></div>
               </div>
               
               <div class="p-8 lg:p-12">
@@ -272,27 +240,5 @@ import Layout from '../layouts/Layout.astro';
       });
     }
 
-    // Animated grid backgrounds
-    let climbingGridOffset = 0;
-    let golfGridOffset = 0;
-    
-    function animateGrids() {
-      climbingGridOffset += 0.5;
-      golfGridOffset += 0.5;
-      
-      const climbingGrid = document.getElementById('climbing-grid');
-      const golfGrid = document.getElementById('golf-grid');
-      
-      if (climbingGrid) {
-        climbingGrid.style.backgroundPosition = `${climbingGridOffset}px ${climbingGridOffset}px`;
-      }
-      if (golfGrid) {
-        golfGrid.style.backgroundPosition = `${golfGridOffset}px ${golfGridOffset}px`;
-      }
-      
-      requestAnimationFrame(animateGrids);
-    }
-    
-    animateGrids();
   </script>
 </Layout>

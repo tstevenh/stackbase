@@ -16,7 +16,7 @@ const { title, description = "I build directories that rank. Premium directory w
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
   <title>{title} | Stackbase</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -33,11 +33,7 @@ const { title, description = "I build directories that rank. Premium directory w
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center justify-between h-16 md:h-20">
         <a href="/" class="group flex items-center gap-2">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00f0ff] to-[#8b5cf6] flex items-center justify-center transition-transform group-hover:scale-110">
-            <svg class="w-5 h-5 text-[#0a0a0f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
-            </svg>
-          </div>
+          <img src="/logo.png" alt="Stackbase logo" class="w-8 h-8 rounded-lg object-cover transition-transform group-hover:scale-110" />
           <span class="text-xl font-bold text-white tracking-tight font-['Space_Grotesk']">Stackbase</span>
         </a>
         
@@ -93,16 +89,12 @@ const { title, description = "I build directories that rank. Premium directory w
     <slot />
   </main>
 
-  <footer class="border-t border-[#2a2a3a]/50 mt-24 bg-[#0a0a0f]">
+  <footer class="border-t border-[#2a2a3a]/50 mt-10 bg-[#0a0a0f]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
         <div class="md:col-span-2">
           <div class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00f0ff] to-[#8b5cf6] flex items-center justify-center">
-              <svg class="w-5 h-5 text-[#0a0a0f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
-              </svg>
-            </div>
+            <img src="/logo.png" alt="Stackbase logo" class="w-8 h-8 rounded-lg object-cover" />
             <span class="text-lg font-bold text-white font-['Space_Grotesk']">Stackbase</span>
           </div>
           <p class="text-[#8b8b9a] text-sm max-w-sm leading-relaxed">Building directories that rank. Premium directory websites for niche communities with a focus on quality over quantity.</p>
