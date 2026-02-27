@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 
 export interface Props {
   title: string;
@@ -217,6 +218,7 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
       document.addEventListener('mouseup', () => cursor.classList.remove('clicking'));
     }
   </script>
+  <Analytics />
 </body>
 </html>
 
