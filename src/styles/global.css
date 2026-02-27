@@ -269,9 +269,18 @@
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Safety first: content should never be hidden waiting for JS */
 .has-js .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: none;
+}
+
+/* Mobile safety: prevent hidden sections when scroll triggers are flaky */
+@media (max-width: 768px) {
+  .stagger-children > * {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .reveal.active {
