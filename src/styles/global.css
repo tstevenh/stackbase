@@ -275,11 +275,15 @@
   transform: none;
 }
 
-/* Mobile safety: prevent hidden sections when scroll triggers are flaky */
-@media (max-width: 768px) {
+/* Mobile/tablet safety: prevent hidden sections when scroll triggers are flaky */
+@media (max-width: 1024px) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
   .stagger-children > * {
-    opacity: 1;
-    transform: none;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
